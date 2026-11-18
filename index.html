@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Ehtisham Khan — AI & Full-Stack Engineer</title>
+  <meta name="description" content="Muhammad Ehtisham Khan — AI & Full-Stack Engineer building LangGraph multi-agent systems, hybrid RAG pipelines, YOLOv8/11 computer vision, and FastAPI/React applications." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Animated Neural Background Canvas -->
+  <canvas id="neuralCanvas" aria-hidden="true"></canvas>
+  <div class="radial-backdrop" aria-hidden="true"></div>
+
+  <!-- Top Navigation Bar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#hero" class="brand-logo">
+        <span class="brand-dot"></span>
+        <span class="brand-mono">Ehtisham<span class="brand-accent"> Khan</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#work" class="nav-link">Projects</a>
+        <a href="#stack" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#archive" class="nav-link">GitHub</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark or light theme" title="Toggle Theme">
+          <svg id="iconSun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="iconMoon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="Muhammad_Ehtisham_Khan_Resume.pdf" class="btn-outline-sm" download>
+          <span>Resume</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+
+        <a href="#contact" class="btn-primary-sm">Contact Me</a>
+
+        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="7" x2="21" y2="7"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="17" x2="21" y2="17"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="availability-tag">
+            <span class="ping-dot"></span>
+            <span class="mono-tag">Available for AI &amp; Full-Stack Roles · Karachi &amp; Remote</span>
+          </div>
+
+          <h1 class="hero-display">
+            Muhammad <br />
+            <span class="hero-gradient">Ehtisham Khan</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            AI &amp; Full-Stack Engineer building production <strong>LangGraph multi-agent workflows</strong>, <strong>hybrid Qdrant/Redis RAG systems</strong>, <strong>real-time YOLOv8/11 computer vision pipelines</strong>, and scalable web applications with <strong>Python, FastAPI, React, and Next.js</strong> at <strong>Irvinei</strong>.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#work" class="btn-aura-primary">
+              <span>View Projects</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="Muhammad_Ehtisham_Khan_Resume.pdf" class="btn-aura-secondary" download>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span>Download CV (PDF)</span>
+            </a>
+          </div>
+
+          <div class="hero-meta-strip">
+            <a href="https://github.com/ehtishamsher" target="_blank" rel="noopener" class="meta-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>github.com/ehtishamsher</span>
+            </a>
+            <a href="https://www.linkedin.com/in/mohdehtishamkhan/" target="_blank" rel="noopener" class="meta-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              <span>linkedin.com/in/mohdehtishamkhan</span>
+            </a>
+            <a href="mailto:m.ehtishamghouri@gmail.com" class="meta-chip">
+              <span>m.ehtishamghouri@gmail.com</span>
+            </a>
+            <a href="tel:+923352255187" class="meta-chip">
+              <span>+92 335 2255187</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4-COLUMN KEY HIGHLIGHTS BAR -->
+        <div class="stats-bento">
+          <div class="stat-box">
+            <div class="stat-top">
+              <span class="stat-pill">LangGraph</span>
+            </div>
+            <div class="stat-number">15-Stage</div>
+            <div class="stat-title">Autonomous AutoML Pipeline</div>
+            <p class="stat-desc">End-to-end dataset discovery, validation, training &amp; TensorRT export</p>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-top">
+              <span class="stat-pill">Qdrant + Redis</span>
+            </div>
+            <div class="stat-number">&lt;180ms</div>
+            <div class="stat-title">Hybrid RAG Retrieval</div>
+            <p class="stat-desc">Semantic vector search paired with exact JSON snapshot verification</p>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-top">
+              <span class="stat-pill">YOLOv8 / YOLO11</span>
+            </div>
+            <div class="stat-number">95%+</div>
+            <div class="stat-title">Computer Vision Accuracy</div>
+            <p class="stat-desc">1,000+ daily image &amp; video streams processed at Irvinei</p>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-top">
+              <span class="stat-pill">Open Source</span>
+            </div>
+            <div class="stat-number">38+</div>
+            <div class="stat-title">GitHub Repositories</div>
+            <p class="stat-desc">PyTorch Transformers from scratch, MLOps ETL &amp; Classical ML</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <span class="section-index">PORTFOLIO</span>
+            <h2 class="section-heading">Featured Engineering Projects</h2>
+          </div>
+
+          <div class="filter-group" id="bentoFilters">
+            <button type="button" class="f-pill active" data-category="All">All Projects</button>
+            <button type="button" class="f-pill" data-category="Agentic AI & LLMs">AI Agents &amp; RAG</button>
+            <button type="button" class="f-pill" data-category="Computer Vision">Computer Vision</button>
+            <button type="button" class="f-pill" data-category="MLOps & Data Engineering">MLOps &amp; Data</button>
+            <button type="button" class="f-pill" data-category="Full-Stack & Web">Full-Stack Web</button>
+          </div>
+        </div>
+
+        <div class="bento-case-grid" id="bentoProjectsGrid">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section class="section" id="stack">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <span class="section-index">EXPERTISE</span>
+            <h2 class="section-heading">Technical Skills &amp; Stack</h2>
+          </div>
+          <p class="section-side-note">
+            Hands-on production experience across multi-agent LLM orchestration, computer vision, full-stack web APIs, and cloud MLOps.
+          </p>
+        </div>
+
+        <div class="stack-bento-grid" id="stackGrid">
+          <!-- Populated from /api/profile -->
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE & EDUCATION -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <span class="section-index">CAREER</span>
+            <h2 class="section-heading">Work Experience &amp; Education</h2>
+          </div>
+        </div>
+
+        <div class="exp-log-layout">
+          <div class="exp-timeline" id="expTimeline">
+            <!-- Populated from /api/profile -->
+          </div>
+
+          <aside class="exp-sidebar">
+            <div id="eduSidebarCard"></div>
+
+            <div class="resume-bento-box">
+              <div class="rb-head">
+                <span class="stat-code">RESUME</span>
+                <h3>Curriculum Vitae</h3>
+                <p>Complete overview of my experience at Irvinei, full-stack &amp; AI skills, projects, and education.</p>
+              </div>
+
+              <div class="rb-list">
+                <a href="Muhammad_Ehtisham_Khan_Resume.pdf" class="rb-item" download>
+                  <div>
+                    <strong>Muhammad Ehtisham Khan — Resume</strong>
+                    <span>AI &amp; Full-Stack Engineer (LangGraph, RAG, Computer Vision, FastAPI, React)</span>
+                  </div>
+                  <span class="rb-badge">Download PDF ↓</span>
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- GITHUB REPOSITORIES (38 REPOS) -->
+    <section class="section" id="archive">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <span class="section-index">OPEN SOURCE</span>
+            <h2 class="section-heading">GitHub Repositories (<span id="ghArchiveCount">38</span>)</h2>
+          </div>
+
+          <div class="archive-search-wrap">
+            <input type="text" id="ghFilterInput" placeholder="Search repositories (e.g. transformers, networksecurity, yolo)..." aria-label="Search GitHub repositories" />
+          </div>
+        </div>
+
+        <div class="archive-bento-table">
+          <div class="abt-header">
+            <span>REPOSITORY</span>
+            <span>DESCRIPTION</span>
+            <span>LANGUAGE</span>
+            <span>UPDATED</span>
+          </div>
+          <div class="abt-body" id="ghArchiveBody">
+            <!-- Populated from GET /api/github -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & AI ASSISTANT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <span class="section-index">CONTACT</span>
+            <h2 class="section-heading">Get in Touch</h2>
+          </div>
+        </div>
+
+        <div class="contact-bento-grid">
+          <!-- Interactive Portfolio Assistant -->
+          <div class="contact-bento-card">
+            <div class="cbc-header">
+              <div>
+                <span class="stat-code">PORTFOLIO ASSISTANT</span>
+                <h3>Ask About My Work</h3>
+              </div>
+              <button type="button" class="btn-outline-sm" id="clearAgentBtn">Clear</button>
+            </div>
+
+            <div class="agent-feed" id="agentFeed">
+              <div class="agent-msg agent-bot">
+                <div class="agent-bubble">
+                  Hi! Ask me anything about Muhammad Ehtisham Khan’s work at <strong>Irvinei</strong>, his <strong>LangGraph AutoML pipeline</strong>, <strong>Hybrid RAG</strong>, <strong>Computer Vision</strong>, <strong>Full-Stack &amp; MLOps</strong> projects, or how to connect.
+                </div>
+              </div>
+            </div>
+
+            <form class="agent-input-row" id="agentForm">
+              <input type="text" id="agentInput" placeholder="Ask a question about my experience..." required />
+              <button type="submit" class="btn-aura-primary">Ask</button>
+            </form>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-bento-card">
+            <div class="cbc-header">
+              <div>
+                <span class="stat-code">DIRECT MESSAGE</span>
+                <h3>Send a Message</h3>
+              </div>
+              <button type="button" class="btn-outline-sm" id="viewDbInboxBtn">
+                Messages (<span id="dbMsgCount">0</span>)
+              </button>
+            </div>
+
+            <form id="contactForm" class="aura-form">
+              <div class="form-2col">
+                <div class="f-group">
+                  <label for="inName">Your Name *</label>
+                  <input type="text" id="inName" required placeholder="Sarah Ahmed" />
+                </div>
+                <div class="f-group">
+                  <label for="inEmail">Your Email *</label>
+                  <input type="email" id="inEmail" required placeholder="sarah@company.com" />
+                </div>
+              </div>
+
+              <div class="form-2col">
+                <div class="f-group">
+                  <label for="inCompany">Company</label>
+                  <input type="text" id="inCompany" placeholder="Company Name" />
+                </div>
+                <div class="f-group">
+                  <label for="inRole">Role Type</label>
+                  <select id="inRole">
+                    <option value="AI / LLM Engineer">AI / LLM Engineer</option>
+                    <option value="AI Full-Stack Engineer">AI Full-Stack Engineer</option>
+                    <option value="Data Engineering & Analytics">Data Engineering &amp; Analytics</option>
+                    <option value="Computer Vision Engineer">Computer Vision Engineer</option>
+                    <option value="Consulting / Contract">Consulting / Contract</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="f-group">
+                <label for="inMessage">Message *</label>
+                <textarea id="inMessage" rows="4" required placeholder="Tell me about the role or project..."></textarea>
+              </div>
+
+              <button type="submit" class="btn-aura-primary" id="submitContactBtn" style="width:100%; justify-content:center;">
+                <span>Send Message</span>
+              </button>
+              <p class="form-status-msg" id="contactStatusMsg"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-dot"></span>
+        <span class="brand-mono">Muhammad Ehtisham Khan</span>
+        <span class="footer-sub">— AI &amp; Full-Stack Engineer • Karachi, Pakistan</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://github.com/ehtishamsher" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/mohdehtishamkhan/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:m.ehtishamghouri@gmail.com">m.ehtishamghouri@gmail.com</a>
+        <a href="tel:+923352255187">+92 335 2255187</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROJECT DETAILS MODAL -->
+  <div class="case-modal-backdrop" id="caseModalBackdrop" aria-hidden="true">
+    <div class="case-modal" role="dialog" aria-modal="true">
+      <div class="case-modal-header">
+        <div>
+          <span class="stat-code" id="caseModalTag">PROJECT ARCHITECTURE</span>
+          <h3 id="caseModalTitle">Project Details</h3>
+        </div>
+        <button type="button" class="case-modal-close" id="caseModalClose">&times;</button>
+      </div>
+      <div class="case-modal-body" id="caseModalBody"></div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

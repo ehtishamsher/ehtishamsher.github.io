@@ -1,0 +1,458 @@
+{
+  "name": "Muhammad Ehtisham Khan",
+  "headline": "AI & Full-Stack Engineer",
+  "subheadline": "LangGraph Multi-Agent Systems • RAG & Vector Search • Computer Vision • FastAPI & React",
+  "location": "Karachi, Pakistan",
+  "phone": "+92 335 2255187",
+  "email": "m.ehtishamghouri@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/mohdehtishamkhan/",
+  "github": "https://github.com/ehtishamsher",
+  "availability": "Available for AI Engineer, Full-Stack & Data Engineering Roles",
+  "summary": "AI-first Full-Stack Engineer with hands-on production experience designing and shipping autonomous multi-agent workflows (LangGraph, OpenAI, Anthropic), hybrid RAG systems (Qdrant, Redis, MongoDB), real-time computer vision pipelines (YOLOv8/YOLO11, TensorRT, ONNX), and scalable web applications (Python, FastAPI, React.js, Next.js, Node.js). Contributed to a commercial shipped consumer AI security device and architected a 15-stage autonomous AutoML training platform at Irvinei.",
+  "metrics": [
+    {
+      "label": "Production AI Agents & Steps",
+      "value": "15-Stage",
+      "detail": "Autonomous LangGraph AutoML Pipeline"
+    },
+    {
+      "label": "Public GitHub Repositories",
+      "value": "38+",
+      "detail": "Transformers, MLOps, CV & Classical ML"
+    },
+    {
+      "label": "Daily Telemetry Processed",
+      "value": "1,000+",
+      "detail": "Images/Video streams at 95%+ accuracy"
+    },
+    {
+      "label": "Multimodal Coverage",
+      "value": "90+ Langs",
+      "detail": "Whisper STT, BLIP, OCR & TTS Pipelines"
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-1",
+      "role": "AI Engineer",
+      "company": "Irvinei",
+      "period": "September 2026 – Present",
+      "location": "Karachi, Pakistan (Global Engineering Team)",
+      "type": "Full-Time",
+      "tech": [
+        "LangGraph",
+        "FastAPI",
+        "React",
+        "MongoDB",
+        "Redis",
+        "Qdrant",
+        "OpenAI",
+        "Anthropic",
+        "YOLOv8/11",
+        "AWS S3",
+        "Cloudflare R2"
+      ],
+      "highlights": [
+        "Architected an autonomous 15-stage multi-agent pipeline (LangGraph, FastAPI, MongoDB) that converts plain-language prompts (e.g., training a PPE detector within a 1-hour, 16GB VRAM budget) into deployed computer vision models.",
+        "Built native Python agent tools for dataset discovery (Roboflow, Kaggle, Hugging Face, GitHub), VRAM estimation, dynamic YOLO config generation, and automated metrics evaluation orchestrated via LangGraph state machines.",
+        "Engineered an enterprise RAG supervision and expert chat system powered by OpenAI and Anthropic Claude LLMs, pairing Qdrant vector embeddings with exact JSON snapshot retrieval from Redis and MongoDB.",
+        "Implemented self-healing recovery (automatic resolution of CUDA out-of-memory and worker crashes) and a closed-loop hyperparameter optimizer that retrains models until strict quality thresholds are met.",
+        "Automated YOLOv8/YOLO11 fine-tuning, evaluation (Precision, Recall, F1, mAP), and multi-target hardware export pipelines (ONNX, TensorRT, TFLite, CoreML, OpenVINO)."
+      ]
+    },
+    {
+      "id": "exp-2",
+      "role": "AI Intern",
+      "company": "Irvinei",
+      "period": "March 2026 – September 2026",
+      "location": "Karachi, Pakistan",
+      "type": "Internship",
+      "tech": [
+        "Python",
+        "LangGraph",
+        "Computer Vision",
+        "OpenCV",
+        "Edge AI",
+        "AWS S3",
+        "Data Pipelines"
+      ],
+      "highlights": [
+        "Contributed to a shipped, commercial consumer AI security device featuring real-time on-device computer vision and multiple AI-driven alert types with zero unauthorized cloud video storage.",
+        "Co-developed LangGraph multi-agent workflows, RAG-based AI supervision, and the platform's core CV Engine for real-time inference across drones, robots, and edge cameras.",
+        "Processed and validated 1,000+ daily images and video streams through AI-assisted annotation and ETL workflows while maintaining 95%+ data accuracy.",
+        "Collaborated with a global engineering team to establish data quality gates, validation benchmarks, and production documentation standards."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science (BSCS)",
+      "institution": "Sir Syed University of Engineering & Technology (SSUET)",
+      "location": "Karachi, Pakistan",
+      "coursework": [
+        "Artificial Intelligence & Machine Learning",
+        "Data Structures & Algorithms",
+        "Database Management Systems (SQL/NoSQL)",
+        "Probability & Statistics",
+        "Software Engineering & System Architecture",
+        "Object-Oriented Programming"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "AI Agents, LLMs & RAG",
+      "icon": "cpu",
+      "items": [
+        {
+          "name": "LangGraph Multi-Agent Orchestration",
+          "level": 96
+        },
+        {
+          "name": "LangChain & Agentic Tooling",
+          "level": 94
+        },
+        {
+          "name": "OpenAI (GPT-4o) & Anthropic Claude APIs",
+          "level": 95
+        },
+        {
+          "name": "Hybrid RAG & Qdrant Vector Search",
+          "level": 92
+        },
+        {
+          "name": "Prompt Engineering & Anti-Hallucination",
+          "level": 93
+        },
+        {
+          "name": "PyTorch Transformers From Scratch",
+          "level": 88
+        }
+      ]
+    },
+    {
+      "category": "Full-Stack & Backend Engineering",
+      "icon": "code",
+      "items": [
+        {
+          "name": "Python & FastAPI / Flask",
+          "level": 96
+        },
+        {
+          "name": "RESTful APIs, WebSockets & JWT Auth",
+          "level": 93
+        },
+        {
+          "name": "React.js, Next.js & Modern JavaScript",
+          "level": 86
+        },
+        {
+          "name": "Node.js & Express Backend Services",
+          "level": 84
+        },
+        {
+          "name": "Streamlit & Interactive Dashboards",
+          "level": 94
+        },
+        {
+          "name": "HTML5, CSS3 & Responsive UI Architecture",
+          "level": 90
+        }
+      ]
+    },
+    {
+      "category": "Computer Vision & Deep Learning",
+      "icon": "eye",
+      "items": [
+        {
+          "name": "YOLOv8, YOLO11, YOLO-World & OpenCV",
+          "level": 95
+        },
+        {
+          "name": "PyTorch & TensorFlow Deep Learning",
+          "level": 91
+        },
+        {
+          "name": "Model Export (ONNX, TensorRT, CoreML, TFLite)",
+          "level": 89
+        },
+        {
+          "name": "Multimodal AI (Whisper STT, BLIP, Tesseract OCR)",
+          "level": 92
+        },
+        {
+          "name": "Multi-Object Tracking & Spatial Indexing",
+          "level": 88
+        }
+      ]
+    },
+    {
+      "category": "Databases, Data Engineering & MLOps",
+      "icon": "database",
+      "items": [
+        {
+          "name": "MongoDB, Redis & Qdrant Vector DB",
+          "level": 93
+        },
+        {
+          "name": "PostgreSQL, SQLite & Relational SQL",
+          "level": 91
+        },
+        {
+          "name": "ETL/ELT Pipelines & Data Quality Gates",
+          "level": 92
+        },
+        {
+          "name": "Docker, GitHub Actions CI/CD & Git",
+          "level": 89
+        },
+        {
+          "name": "AWS (Elastic Beanstalk, S3) & Cloudflare R2",
+          "level": 88
+        },
+        {
+          "name": "Scikit-learn, XGBoost, CatBoost & Pandas",
+          "level": 93
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "agentic-ml",
+      "title": "Agentic ML — 15-Stage Autonomous AutoML Pipeline",
+      "category": "Agentic AI & LLMs",
+      "badge": "Flagship Production System • Irvinei",
+      "featured": true,
+      "summary": "Autonomous multi-agent platform that plans, discovers datasets, validates, trains, monitors, evaluates, and optimizes YOLO computer vision models from a single natural-language prompt.",
+      "architecture": [
+        "Natural Language Goal Parsing & VRAM/Time Budget Estimation via LangGraph State Machine",
+        "Multi-Source Dataset Discovery across Roboflow, Kaggle, Hugging Face & GitHub",
+        "Automated Data Integrity Gate: Corrupt Image Repair, Annotation Verification & S3/R2 Upload",
+        "GPU Pre-Flight Dry Run, Real-Time Loss Streaming & Self-Healing CUDA OOM Recovery",
+        "Closed-Loop Hyperparameter Optimizer & Multi-Format Export (ONNX, TensorRT, TFLite, CoreML)"
+      ],
+      "tech": [
+        "LangGraph",
+        "FastAPI",
+        "Python",
+        "MongoDB",
+        "YOLOv8/11",
+        "AWS S3",
+        "Cloudflare R2",
+        "TensorRT"
+      ],
+      "github": "https://github.com/ehtishamsher",
+      "metrics": "15 Automated Stages • Self-Healing GPU Recovery"
+    },
+    {
+      "id": "hybrid-rag-platform",
+      "title": "Enterprise Hybrid RAG & Agentic Supervision Engine",
+      "category": "Agentic AI & LLMs",
+      "badge": "Production AI Platform • Irvinei",
+      "featured": true,
+      "summary": "Hybrid Retrieval-Augmented Generation architecture combining Qdrant semantic vector embeddings with deterministic Redis/MongoDB snapshot retrieval and anti-hallucination verification.",
+      "architecture": [
+        "Dual-Path Retrieval: Qdrant dense vector search + exact JSON state snapshots from Redis & MongoDB",
+        "Multi-LLM Routing across OpenAI GPT-4o and Anthropic Claude models",
+        "Anti-Hallucination Guardrails verifying generated claims against live telemetry snapshots",
+        "Sub-200ms response streaming via FastAPI asynchronous endpoints"
+      ],
+      "tech": [
+        "Qdrant",
+        "LangGraph",
+        "OpenAI",
+        "Anthropic",
+        "Redis",
+        "MongoDB",
+        "FastAPI"
+      ],
+      "github": "https://github.com/ehtishamsher",
+      "metrics": "Zero-Hallucination Guardrails • Hybrid Vector+Snapshot Search"
+    },
+    {
+      "id": "sensebridge",
+      "title": "SenseBridge — Multimodal AI Accessibility Assistant",
+      "category": "Full-Stack & Web",
+      "badge": "Final Year Project • Open Source",
+      "featured": true,
+      "summary": "Unified 4-modality web platform empowering visually and hearing-impaired users via speech-to-text (90+ languages), text-to-speech, image captioning + OCR, and text-to-image synthesis.",
+      "architecture": [
+        "Speech-to-Text Engine powered by OpenAI Whisper supporting 90+ international languages",
+        "Visual Understanding Pipeline chaining Salesforce BLIP image captioning with Tesseract OCR",
+        "Neural Text-to-Speech (gTTS) and Generative Text-to-Image synthesis (Pollinations AI)",
+        "Modular Python backend with local SQLite transactional audit history per modality"
+      ],
+      "tech": [
+        "Python",
+        "OpenAI Whisper",
+        "Salesforce BLIP",
+        "Tesseract OCR",
+        "gTTS",
+        "SQLite",
+        "Streamlit"
+      ],
+      "github": "https://github.com/ehtishamsher/sensebridge",
+      "metrics": "4 AI Modalities Chained • 90+ Languages Supported"
+    },
+    {
+      "id": "network-security-mlops",
+      "title": "Network Security Phishing Detection & MLOps ETL Pipeline",
+      "category": "MLOps & Data Engineering",
+      "badge": "End-to-End MLOps • GitHub",
+      "featured": true,
+      "summary": "Production-grade data engineering and cybersecurity ML system featuring automated MongoDB ETL pipelines, schema validation gates, Docker containerization, and GitHub Actions CI/CD.",
+      "architecture": [
+        "Automated ETL Extractor & Loader (push_data.py) transforming raw network records into MongoDB",
+        "Strict Data Schema Validation & Drift Detection before model ingestion",
+        "Modular Python package architecture with custom exception tracking and structured logging",
+        "Dockerized microservice deployment automated via GitHub Actions CI/CD workflows"
+      ],
+      "tech": [
+        "Python",
+        "MongoDB",
+        "Docker",
+        "GitHub Actions CI/CD",
+        "Scikit-learn",
+        "ETL Pipelines",
+        "FastAPI"
+      ],
+      "github": "https://github.com/ehtishamsher/networksecurity",
+      "metrics": "Full CI/CD + Docker • Automated MongoDB ETL"
+    },
+    {
+      "id": "pytorch-transformer",
+      "title": "Transformer Architecture Built From Scratch in PyTorch",
+      "category": "Agentic AI & LLMs",
+      "badge": "Deep Learning Core • GitHub",
+      "featured": true,
+      "summary": "Complete ground-up implementation of the Transformer neural architecture in PyTorch including multi-head self-attention, positional encoding, custom dataset loaders, autoregressive generation, and unit tests.",
+      "architecture": [
+        "Custom Multi-Head Self-Attention, LayerNorm, Feed-Forward Networks & Positional Encodings (model.py)",
+        "Configurable hyperparameter system (config.py) & streaming dataset pipeline (dataset.py)",
+        "End-to-end training loop (train.py) and autoregressive text generation engine (generate.py)",
+        "Automated tensor shape and attention verification test suite (test_transformer.py)"
+      ],
+      "tech": [
+        "PyTorch",
+        "Python",
+        "Transformers",
+        "Self-Attention",
+        "Deep Learning",
+        "Unit Testing"
+      ],
+      "github": "https://github.com/ehtishamsher/transformers",
+      "metrics": "From-Scratch PyTorch • Full Test Suite"
+    },
+    {
+      "id": "spatial-memory-cv",
+      "title": "Spatial Memory — Vision LLM & Temporal Tracking Assistant",
+      "category": "Computer Vision",
+      "badge": "Edge AI & Vision • Irvinei",
+      "featured": true,
+      "summary": "Camera-based spatial reasoning system combining YOLOv8 object detection, multi-object tracking, and a SQLite temporal index so a Vision LLM can answer natural-language questions about physical events.",
+      "architecture": [
+        "Real-time YOLOv8 detection paired with persistent multi-object tracking IDs",
+        "Temporal SQLite event indexing recording object trajectories, timestamps, and spatial zones",
+        "Vision LLM query bridge translating conversational questions into temporal SQL + visual verification"
+      ],
+      "tech": [
+        "YOLOv8",
+        "Vision LLM",
+        "OpenCV",
+        "SQLite",
+        "Multi-Object Tracking",
+        "Python"
+      ],
+      "github": "https://github.com/ehtishamsher",
+      "metrics": "Real-Time Spatial Indexing • Natural Language Video QA"
+    },
+    {
+      "id": "student-performance-aws",
+      "title": "End-to-End Predictive Analytics Pipeline on AWS Elastic Beanstalk",
+      "category": "MLOps & Data Engineering",
+      "badge": "Cloud Deployment • GitHub",
+      "featured": false,
+      "summary": "Modular machine learning regression and ensemble pipeline (CatBoost, XGBoost, Scikit-learn) with automated feature engineering and cloud deployment on AWS Elastic Beanstalk.",
+      "architecture": [
+        "Automated Data Ingestion, Train/Test Split & ColumnTransformer Feature Pipelines",
+        "Model Benchmarking across CatBoost, XGBoost, Random Forest, and Gradient Boosting",
+        "Production web application (application.py) deployed via AWS .ebextensions"
+      ],
+      "tech": [
+        "Python",
+        "CatBoost",
+        "XGBoost",
+        "Scikit-learn",
+        "AWS Elastic Beanstalk",
+        "Flask"
+      ],
+      "github": "https://github.com/ehtishamsher/mlproject",
+      "metrics": "AWS Cloud Deployed • Ensemble Benchmarking"
+    },
+    {
+      "id": "yolo-world-zero-shot",
+      "title": "YOLO-World & YOLOE-26 Open-Vocabulary Detection Suite",
+      "category": "Computer Vision",
+      "badge": "Zero-Shot Vision • GitHub",
+      "featured": false,
+      "summary": "Implementation of open-vocabulary zero-shot object detection using YOLO-World and YOLOE-26, enabling real-time detection of arbitrary custom classes via text prompts without retraining.",
+      "architecture": [
+        "Vision-Language Reparameterizable Path Aggregation Network (RepVL-PAN)",
+        "Zero-shot custom vocabulary prompt injection for instant edge inference"
+      ],
+      "tech": [
+        "Python",
+        "YOLO-World",
+        "YOLOE-26",
+        "PyTorch",
+        "OpenCV",
+        "Computer Vision"
+      ],
+      "github": "https://github.com/ehtishamsher/yolo_world_model",
+      "metrics": "Zero-Shot Prompt Detection • Real-Time CV"
+    },
+    {
+      "id": "live-alerts-automation",
+      "title": "Live Alerts — Autonomous Event Routing & Cloud Media Pipeline",
+      "category": "Computer Vision",
+      "badge": "Autonomous Pipeline",
+      "featured": false,
+      "summary": "24/7 autonomous edge-to-cloud pipeline where motion-gated detection triggers secondary classification models, automated webhook/notification routing, and AWS S3 media archival.",
+      "architecture": [
+        "Low-latency motion gating to filter idle frames and minimize GPU compute",
+        "Cascaded classification & event routing with automated S3 clip storage"
+      ],
+      "tech": [
+        "Python",
+        "OpenCV",
+        "AWS S3",
+        "Webhooks",
+        "Event-Driven Automation"
+      ],
+      "github": "https://github.com/ehtishamsher",
+      "metrics": "24/7 Autonomous Operation • Motion-Gated Compute"
+    },
+    {
+      "id": "gemini-clone-react",
+      "title": "Gemini AI Web Interface (React + Vite)",
+      "category": "Full-Stack & Web",
+      "badge": "Frontend UI • GitHub",
+      "featured": false,
+      "summary": "Responsive conversational AI web interface built with React.js and Vite featuring modern component state management, prompt history, and sleek animations.",
+      "architecture": [
+        "Modular React component hierarchy with Vite fast HMR build system",
+        "Responsive sidebar, prompt cards, and streaming-style response rendering"
+      ],
+      "tech": [
+        "React.js",
+        "JavaScript (ES6+)",
+        "Vite",
+        "CSS3",
+        "Responsive Design"
+      ],
+      "github": "https://github.com/ehtishamsher/Gemini-Clone",
+      "metrics": "React + Vite SPA • Mobile-First UI"
+    }
+  ]
+}
