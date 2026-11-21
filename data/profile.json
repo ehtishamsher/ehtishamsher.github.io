@@ -1,86 +1,84 @@
 {
   "name": "Muhammad Ehtisham Khan",
-  "headline": "AI & Full-Stack Engineer",
-  "subheadline": "LangGraph Multi-Agent Systems • RAG & Vector Search • Computer Vision • FastAPI & React",
+  "headline": "AI Engineer building practical AI systems, multi-agent workflows, and computer vision applications.",
+  "status": "Currently working as an AI Engineer at Irvinei · Karachi, Pakistan",
   "location": "Karachi, Pakistan",
   "phone": "+92 335 2255187",
   "email": "m.ehtishamghouri@gmail.com",
   "linkedin": "https://www.linkedin.com/in/mohdehtishamkhan/",
   "github": "https://github.com/ehtishamsher",
-  "availability": "Available for AI Engineer, Full-Stack & Data Engineering Roles",
-  "summary": "AI-first Full-Stack Engineer with hands-on production experience designing and shipping autonomous multi-agent workflows (LangGraph, OpenAI, Anthropic), hybrid RAG systems (Qdrant, Redis, MongoDB), real-time computer vision pipelines (YOLOv8/YOLO11, TensorRT, ONNX), and scalable web applications (Python, FastAPI, React.js, Next.js, Node.js). Contributed to a commercial shipped consumer AI security device and architected a 15-stage autonomous AutoML training platform at Irvinei.",
-  "metrics": [
-    {
-      "label": "Production AI Agents & Steps",
-      "value": "15-Stage",
-      "detail": "Autonomous LangGraph AutoML Pipeline"
-    },
-    {
-      "label": "Public GitHub Repositories",
-      "value": "38+",
-      "detail": "Transformers, MLOps, CV & Classical ML"
-    },
-    {
-      "label": "Daily Telemetry Processed",
-      "value": "1,000+",
-      "detail": "Images/Video streams at 95%+ accuracy"
-    },
-    {
-      "label": "Multimodal Coverage",
-      "value": "90+ Langs",
-      "detail": "Whisper STT, BLIP, OCR & TTS Pipelines"
-    }
-  ],
+  "about": {
+    "paragraphs": [
+      "I'm a Computer Science graduate from Sir Syed University of Engineering & Technology (SSUET) in Karachi, currently working full-time as an AI Engineer at Irvinei.",
+      "Most of my day-to-day work sits at the intersection of applied machine learning and backend software engineering. At Irvinei, I architected a 15-stage autonomous model training pipeline using LangGraph, FastAPI, and MongoDB, and previously contributed to the computer vision stack for a commercial consumer security device shipped to customers.",
+      "I enjoy taking messy, manual technical workflows—like finding datasets, cleaning corrupt annotations, estimating GPU memory, tuning YOLO models, or querying scattered logs—and turning them into reliable, self-recovering software systems with clean APIs.",
+      "Right now, I'm focused on multi-agent orchestration with deterministic guardrails, hybrid vector + structured snapshot retrieval (RAG), and low-latency model deployment using ONNX and TensorRT."
+    ],
+    "quick_facts": [
+      {
+        "label": "Current Role",
+        "value": "AI Engineer at Irvinei"
+      },
+      {
+        "label": "Education",
+        "value": "B.S. in Computer Science, SSUET Karachi"
+      },
+      {
+        "label": "Core Focus",
+        "value": "LangGraph Agents, Hybrid RAG, Computer Vision, FastAPI"
+      },
+      {
+        "label": "Open Source",
+        "value": "38 public repositories on GitHub"
+      }
+    ]
+  },
   "experience": [
     {
       "id": "exp-1",
       "role": "AI Engineer",
       "company": "Irvinei",
-      "period": "September 2026 – Present",
-      "location": "Karachi, Pakistan (Global Engineering Team)",
-      "type": "Full-Time",
+      "period": "Sep 2026 — Present",
+      "location": "Karachi, Pakistan",
+      "bullets": [
+        "Architected a 15-stage autonomous model training pipeline (LangGraph, FastAPI, MongoDB) that takes a plain-language request—such as training a PPE detector under a 1-hour, 16GB VRAM budget—and runs dataset discovery, validation, training, evaluation, and hardware export end-to-end.",
+        "Built native Python agent tools for multi-source dataset search (Roboflow, Kaggle, Hugging Face, GitHub), GPU VRAM estimation, dynamic YOLOv8/YOLO11 config generation, and automated metric evaluation.",
+        "Engineered a hybrid RAG supervision and diagnostic chat system using OpenAI and Anthropic models, pairing Qdrant vector search with exact JSON telemetry snapshots from Redis and MongoDB to prevent fabricated metrics.",
+        "Added self-healing training recovery (automatically catching CUDA out-of-memory errors and worker crashes by adjusting batch sizes and resuming checkpoints) and multi-format export pipelines (ONNX, TensorRT, CoreML, TFLite, OpenVINO)."
+      ],
       "tech": [
+        "Python",
         "LangGraph",
         "FastAPI",
-        "React",
         "MongoDB",
         "Redis",
         "Qdrant",
-        "OpenAI",
-        "Anthropic",
         "YOLOv8/11",
+        "TensorRT",
         "AWS S3",
         "Cloudflare R2"
-      ],
-      "highlights": [
-        "Architected an autonomous 15-stage multi-agent pipeline (LangGraph, FastAPI, MongoDB) that converts plain-language prompts (e.g., training a PPE detector within a 1-hour, 16GB VRAM budget) into deployed computer vision models.",
-        "Built native Python agent tools for dataset discovery (Roboflow, Kaggle, Hugging Face, GitHub), VRAM estimation, dynamic YOLO config generation, and automated metrics evaluation orchestrated via LangGraph state machines.",
-        "Engineered an enterprise RAG supervision and expert chat system powered by OpenAI and Anthropic Claude LLMs, pairing Qdrant vector embeddings with exact JSON snapshot retrieval from Redis and MongoDB.",
-        "Implemented self-healing recovery (automatic resolution of CUDA out-of-memory and worker crashes) and a closed-loop hyperparameter optimizer that retrains models until strict quality thresholds are met.",
-        "Automated YOLOv8/YOLO11 fine-tuning, evaluation (Precision, Recall, F1, mAP), and multi-target hardware export pipelines (ONNX, TensorRT, TFLite, CoreML, OpenVINO)."
       ]
     },
     {
       "id": "exp-2",
       "role": "AI Intern",
       "company": "Irvinei",
-      "period": "March 2026 – September 2026",
+      "period": "Mar 2026 — Sep 2026",
       "location": "Karachi, Pakistan",
-      "type": "Internship",
+      "bullets": [
+        "Contributed to a commercial consumer AI security device shipped to customers, implementing real-time on-device computer vision alerts with zero cloud video storage to preserve user privacy.",
+        "Co-developed LangGraph multi-agent workflows and real-time inference pipelines for the platform's core CV Engine across cameras, drones, and edge devices.",
+        "Processed and validated 1,000+ daily image and video samples through automated annotation and data-cleaning pipelines while maintaining 95%+ dataset accuracy.",
+        "Worked with a distributed engineering team to establish dataset validation rules, evaluation benchmarks, and technical documentation."
+      ],
       "tech": [
         "Python",
-        "LangGraph",
-        "Computer Vision",
         "OpenCV",
-        "Edge AI",
+        "YOLOv8",
+        "LangGraph",
+        "Edge Inference",
         "AWS S3",
         "Data Pipelines"
-      ],
-      "highlights": [
-        "Contributed to a shipped, commercial consumer AI security device featuring real-time on-device computer vision and multiple AI-driven alert types with zero unauthorized cloud video storage.",
-        "Co-developed LangGraph multi-agent workflows, RAG-based AI supervision, and the platform's core CV Engine for real-time inference across drones, robots, and edge cameras.",
-        "Processed and validated 1,000+ daily images and video streams through AI-assisted annotation and ETL workflows while maintaining 95%+ data accuracy.",
-        "Collaborated with a global engineering team to establish data quality gates, validation benchmarks, and production documentation standards."
       ]
     }
   ],
@@ -89,200 +87,139 @@
       "degree": "Bachelor of Science in Computer Science (BSCS)",
       "institution": "Sir Syed University of Engineering & Technology (SSUET)",
       "location": "Karachi, Pakistan",
-      "coursework": [
-        "Artificial Intelligence & Machine Learning",
-        "Data Structures & Algorithms",
-        "Database Management Systems (SQL/NoSQL)",
-        "Probability & Statistics",
-        "Software Engineering & System Architecture",
-        "Object-Oriented Programming"
-      ]
+      "period": "Graduated",
+      "details": "Final Year Project: SenseBridge — Multimodal accessibility web application combining speech recognition (Whisper), image captioning (BLIP), OCR (Tesseract), and text-to-speech."
     }
   ],
-  "skills": [
-    {
-      "category": "AI Agents, LLMs & RAG",
-      "icon": "cpu",
-      "items": [
-        {
-          "name": "LangGraph Multi-Agent Orchestration",
-          "level": 96
-        },
-        {
-          "name": "LangChain & Agentic Tooling",
-          "level": 94
-        },
-        {
-          "name": "OpenAI (GPT-4o) & Anthropic Claude APIs",
-          "level": 95
-        },
-        {
-          "name": "Hybrid RAG & Qdrant Vector Search",
-          "level": 92
-        },
-        {
-          "name": "Prompt Engineering & Anti-Hallucination",
-          "level": 93
-        },
-        {
-          "name": "PyTorch Transformers From Scratch",
-          "level": 88
-        }
-      ]
-    },
-    {
-      "category": "Full-Stack & Backend Engineering",
-      "icon": "code",
-      "items": [
-        {
-          "name": "Python & FastAPI / Flask",
-          "level": 96
-        },
-        {
-          "name": "RESTful APIs, WebSockets & JWT Auth",
-          "level": 93
-        },
-        {
-          "name": "React.js, Next.js & Modern JavaScript",
-          "level": 86
-        },
-        {
-          "name": "Node.js & Express Backend Services",
-          "level": 84
-        },
-        {
-          "name": "Streamlit & Interactive Dashboards",
-          "level": 94
-        },
-        {
-          "name": "HTML5, CSS3 & Responsive UI Architecture",
-          "level": 90
-        }
-      ]
-    },
-    {
-      "category": "Computer Vision & Deep Learning",
-      "icon": "eye",
-      "items": [
-        {
-          "name": "YOLOv8, YOLO11, YOLO-World & OpenCV",
-          "level": 95
-        },
-        {
-          "name": "PyTorch & TensorFlow Deep Learning",
-          "level": 91
-        },
-        {
-          "name": "Model Export (ONNX, TensorRT, CoreML, TFLite)",
-          "level": 89
-        },
-        {
-          "name": "Multimodal AI (Whisper STT, BLIP, Tesseract OCR)",
-          "level": 92
-        },
-        {
-          "name": "Multi-Object Tracking & Spatial Indexing",
-          "level": 88
-        }
-      ]
-    },
-    {
-      "category": "Databases, Data Engineering & MLOps",
-      "icon": "database",
-      "items": [
-        {
-          "name": "MongoDB, Redis & Qdrant Vector DB",
-          "level": 93
-        },
-        {
-          "name": "PostgreSQL, SQLite & Relational SQL",
-          "level": 91
-        },
-        {
-          "name": "ETL/ELT Pipelines & Data Quality Gates",
-          "level": 92
-        },
-        {
-          "name": "Docker, GitHub Actions CI/CD & Git",
-          "level": 89
-        },
-        {
-          "name": "AWS (Elastic Beanstalk, S3) & Cloudflare R2",
-          "level": 88
-        },
-        {
-          "name": "Scikit-learn, XGBoost, CatBoost & Pandas",
-          "level": 93
-        }
-      ]
-    }
-  ],
-  "projects": [
+  "featured_projects": [
     {
       "id": "agentic-ml",
-      "title": "Agentic ML — 15-Stage Autonomous AutoML Pipeline",
-      "category": "Agentic AI & LLMs",
-      "badge": "Flagship Production System • Irvinei",
-      "featured": true,
-      "summary": "Autonomous multi-agent platform that plans, discovers datasets, validates, trains, monitors, evaluates, and optimizes YOLO computer vision models from a single natural-language prompt.",
+      "title": "Agentic ML — Autonomous Computer Vision Training Platform",
+      "category": "AI Engineering & Agents",
+      "context": "Irvinei Flagship System · 2026",
+      "short_description": "Autonomous 15-stage multi-agent platform that discovers datasets, validates annotations, trains YOLOv8/11 models, recovers from GPU failures, and exports deployment weights from a single natural-language request.",
+      "problem": "Training custom computer vision models required hours of manual work: searching multiple platforms for datasets, fixing broken annotation files, guessing batch sizes that wouldn't crash GPU VRAM, and manually tuning hyperparameters when accuracy stalled.",
+      "solution": "Built a stateful 15-stage LangGraph multi-agent pipeline exposed via FastAPI that automates the entire lifecycle from prompt parsing and dataset curation to GPU pre-flight checks, self-healing training, and closed-loop retraining.",
       "architecture": [
-        "Natural Language Goal Parsing & VRAM/Time Budget Estimation via LangGraph State Machine",
-        "Multi-Source Dataset Discovery across Roboflow, Kaggle, Hugging Face & GitHub",
-        "Automated Data Integrity Gate: Corrupt Image Repair, Annotation Verification & S3/R2 Upload",
-        "GPU Pre-Flight Dry Run, Real-Time Loss Streaming & Self-Healing CUDA OOM Recovery",
-        "Closed-Loop Hyperparameter Optimizer & Multi-Format Export (ONNX, TensorRT, TFLite, CoreML)"
+        "Goal Parser & Planner Node: Extracts target classes, latency targets, and VRAM/time budgets from user prompts.",
+        "Dataset Discovery & Quality Gate: Queries Roboflow, Kaggle, Hugging Face, and GitHub; validates class distributions; auto-repairs corrupt images/labels; uploads clean splits to AWS S3 & Cloudflare R2.",
+        "Pre-Flight GPU Dry Run: Estimates peak VRAM usage and runs a 1-epoch dry run before queuing full training.",
+        "Self-Healing Training Worker: Streams live loss telemetry; automatically catches CUDA Out-Of-Memory errors, scales down batch size, and resumes from the last checkpoint.",
+        "Closed-Loop Evaluator & Exporter: Evaluates mAP, Precision, Recall, and F1 against thresholds and exports passing models to ONNX, TensorRT, CoreML, TFLite, and OpenVINO."
       ],
+      "diagram_nodes": [
+        "User Prompt",
+        "LangGraph Planner",
+        "Dataset Gate (S3/R2)",
+        "Self-Healing YOLO Trainer",
+        "ONNX / TensorRT Export"
+      ],
+      "contribution": "Designed the 15-stage LangGraph state machine, wrote the native Python agent tools (dataset search, VRAM estimator, config generator, OOM recovery loop), and built the FastAPI control endpoints.",
+      "results": "Reduced end-to-end custom model creation from days of manual ML engineering to a single automated run with automatic recovery from GPU memory crashes.",
       "tech": [
+        "Python",
         "LangGraph",
         "FastAPI",
-        "Python",
         "MongoDB",
-        "YOLOv8/11",
+        "YOLOv8 / YOLO11",
         "AWS S3",
         "Cloudflare R2",
-        "TensorRT"
+        "ONNX / TensorRT"
       ],
-      "github": "https://github.com/ehtishamsher",
-      "metrics": "15 Automated Stages • Self-Healing GPU Recovery"
+      "github": "https://github.com/ehtishamsher"
     },
     {
       "id": "hybrid-rag-platform",
-      "title": "Enterprise Hybrid RAG & Agentic Supervision Engine",
-      "category": "Agentic AI & LLMs",
-      "badge": "Production AI Platform • Irvinei",
-      "featured": true,
-      "summary": "Hybrid Retrieval-Augmented Generation architecture combining Qdrant semantic vector embeddings with deterministic Redis/MongoDB snapshot retrieval and anti-hallucination verification.",
+      "title": "Hybrid RAG Supervision & Diagnostic Engine",
+      "category": "LLMs & Retrieval Systems",
+      "context": "Irvinei Production System · 2026",
+      "short_description": "Dual-path Retrieval-Augmented Generation system combining Qdrant semantic vector search with exact JSON state snapshots from Redis and MongoDB, backed by anti-hallucination verification.",
+      "problem": "Standard vector-only RAG systems struggle with live operational telemetry—when engineers asked about a specific training run's loss spike or hyperparameter config, pure embedding search often retrieved stale or approximate chunks and hallucinated numbers.",
+      "solution": "Architected a hybrid retrieval pipeline that pairs dense semantic search in Qdrant with deterministic key-value snapshot lookup in Redis and MongoDB, followed by a verification step that checks numeric claims before returning the response.",
       "architecture": [
-        "Dual-Path Retrieval: Qdrant dense vector search + exact JSON state snapshots from Redis & MongoDB",
-        "Multi-LLM Routing across OpenAI GPT-4o and Anthropic Claude models",
-        "Anti-Hallucination Guardrails verifying generated claims against live telemetry snapshots",
-        "Sub-200ms response streaming via FastAPI asynchronous endpoints"
+        "Query Router: Classifies incoming engineering questions into conceptual queries, live telemetry lookups, or hybrid diagnostics.",
+        "Parallel Retrieval Layer: Fetches top-k semantic embeddings from Qdrant while pulling exact JSON run snapshots from Redis cache and MongoDB.",
+        "Context Assembly & LLM Dispatch: Formats structured telemetry alongside documentation chunks for OpenAI and Anthropic Claude models.",
+        "Anti-Hallucination Verification Gate: Cross-checks generated metrics (loss, mAP, epoch counts) against the ground-truth JSON snapshot prior to streaming."
       ],
+      "diagram_nodes": [
+        "Diagnostic Query",
+        "Parallel Router",
+        "Qdrant Vectors + Redis JSON",
+        "OpenAI / Claude LLM",
+        "Fact Verification Gate"
+      ],
+      "contribution": "Built the hybrid Qdrant + Redis/MongoDB retrieval layer, prompt augmentation templates, and the post-generation numeric verification filter.",
+      "results": "Eliminated fabricated metric reporting in diagnostic chat while keeping end-to-end retrieval latency under 180ms.",
       "tech": [
+        "Python",
         "Qdrant",
-        "LangGraph",
-        "OpenAI",
-        "Anthropic",
         "Redis",
         "MongoDB",
+        "OpenAI API",
+        "Anthropic Claude",
+        "LangGraph",
         "FastAPI"
       ],
-      "github": "https://github.com/ehtishamsher",
-      "metrics": "Zero-Hallucination Guardrails • Hybrid Vector+Snapshot Search"
+      "github": "https://github.com/ehtishamsher"
+    },
+    {
+      "id": "network-security-mlops",
+      "title": "Network Security Phishing Detection & MLOps ETL Pipeline",
+      "category": "MLOps & Data Engineering",
+      "context": "Open-Source Project · GitHub",
+      "short_description": "End-to-end cybersecurity classification and data engineering system featuring automated Python ETL into MongoDB, schema validation gates, modular training stages, Docker containerization, and GitHub Actions CI/CD.",
+      "problem": "Security datasets frequently suffer from schema drift and missing values, and models trained in isolated notebooks fail to deploy reproducibly into production APIs.",
+      "solution": "Engineered a modular Python package with an automated ETL loader (`push_data.py`), YAML schema validation gates, multi-model benchmarking, and a Dockerized FastAPI service deployed via GitHub Actions.",
+      "architecture": [
+        "ETL Extraction & Loading (`push_data.py`): Reads raw phishing and network datasets, normalizes records, and bulk-loads JSON documents into MongoDB.",
+        "Data Validation Gate (`data_schema`): Validates incoming feature columns, data types, and drift thresholds before training.",
+        "Model Training & Tracking: Benchmarks ensemble classifiers with automated artifact versioning.",
+        "CI/CD & Container Deployment: Packages the inference API inside a Docker image built and tested automatically via GitHub Actions workflows."
+      ],
+      "diagram_nodes": [
+        "Raw Network CSV",
+        "Python ETL (push_data.py)",
+        "MongoDB Store",
+        "Schema Validation Gate",
+        "Docker + GitHub Actions API"
+      ],
+      "contribution": "Built the entire repository architecture—including the MongoDB ETL scripts, schema validator, training pipeline, Dockerfile, and GitHub Actions CI/CD workflow.",
+      "results": "Delivered a reproducible, containerized ML microservice with automated data validation and zero-downtime CI/CD builds.",
+      "tech": [
+        "Python",
+        "MongoDB",
+        "Docker",
+        "GitHub Actions",
+        "Scikit-learn",
+        "FastAPI",
+        "ETL Pipelines"
+      ],
+      "github": "https://github.com/ehtishamsher/networksecurity"
     },
     {
       "id": "sensebridge",
-      "title": "SenseBridge — Multimodal AI Accessibility Assistant",
-      "category": "Full-Stack & Web",
-      "badge": "Final Year Project • Open Source",
-      "featured": true,
-      "summary": "Unified 4-modality web platform empowering visually and hearing-impaired users via speech-to-text (90+ languages), text-to-speech, image captioning + OCR, and text-to-image synthesis.",
+      "title": "SenseBridge — Multimodal AI Accessibility Platform",
+      "category": "Multimodal AI & Web",
+      "context": "Final Year Project · SSUET",
+      "short_description": "Unified accessibility web application chaining speech-to-text (90+ languages), text-to-speech, image captioning + OCR, and text-to-image synthesis into a single modular Python platform.",
+      "problem": "Visually and hearing-impaired users often have to switch between separate, fragmented tools for transcription, screen reading, document OCR, and visual description.",
+      "solution": "Created a single web interface that chains four distinct AI modalities—OpenAI Whisper, Salesforce BLIP, Tesseract OCR, and gTTS—backed by a local SQLite history database.",
       "architecture": [
-        "Speech-to-Text Engine powered by OpenAI Whisper supporting 90+ international languages",
-        "Visual Understanding Pipeline chaining Salesforce BLIP image captioning with Tesseract OCR",
-        "Neural Text-to-Speech (gTTS) and Generative Text-to-Image synthesis (Pollinations AI)",
-        "Modular Python backend with local SQLite transactional audit history per modality"
+        "Audio Transcription Pipeline: Processes microphone or uploaded audio through OpenAI Whisper across 90+ languages.",
+        "Dual Visual Understanding Engine: Combines Salesforce BLIP scene captioning with Tesseract OCR to read both natural photos and document text.",
+        "Speech & Visual Synthesis: Converts text to natural audio via gTTS and generates illustrative visuals via Pollinations AI.",
+        "Local Persistence Layer: Stores per-modality session logs in SQLite (`database.py`) for offline auditability and privacy."
       ],
+      "diagram_nodes": [
+        "Audio / Image Input",
+        "Whisper STT + BLIP / OCR",
+        "Modular Python Controller",
+        "gTTS / Image Output",
+        "SQLite Session Store"
+      ],
+      "contribution": "Architected the modular Python codebase (`app.py`, `database.py`, `modules/`), integrated all four AI models, and designed the SQLite persistence schema.",
+      "results": "Successfully defended as the Final Year BSCS Project at SSUET, supporting 90+ languages in a unified accessibility workflow.",
       "tech": [
         "Python",
         "OpenAI Whisper",
@@ -292,167 +229,340 @@
         "SQLite",
         "Streamlit"
       ],
-      "github": "https://github.com/ehtishamsher/sensebridge",
-      "metrics": "4 AI Modalities Chained • 90+ Languages Supported"
-    },
-    {
-      "id": "network-security-mlops",
-      "title": "Network Security Phishing Detection & MLOps ETL Pipeline",
-      "category": "MLOps & Data Engineering",
-      "badge": "End-to-End MLOps • GitHub",
-      "featured": true,
-      "summary": "Production-grade data engineering and cybersecurity ML system featuring automated MongoDB ETL pipelines, schema validation gates, Docker containerization, and GitHub Actions CI/CD.",
-      "architecture": [
-        "Automated ETL Extractor & Loader (push_data.py) transforming raw network records into MongoDB",
-        "Strict Data Schema Validation & Drift Detection before model ingestion",
-        "Modular Python package architecture with custom exception tracking and structured logging",
-        "Dockerized microservice deployment automated via GitHub Actions CI/CD workflows"
-      ],
-      "tech": [
-        "Python",
-        "MongoDB",
-        "Docker",
-        "GitHub Actions CI/CD",
-        "Scikit-learn",
-        "ETL Pipelines",
-        "FastAPI"
-      ],
-      "github": "https://github.com/ehtishamsher/networksecurity",
-      "metrics": "Full CI/CD + Docker • Automated MongoDB ETL"
+      "github": "https://github.com/ehtishamsher/sensebridge"
     },
     {
       "id": "pytorch-transformer",
       "title": "Transformer Architecture Built From Scratch in PyTorch",
-      "category": "Agentic AI & LLMs",
-      "badge": "Deep Learning Core • GitHub",
-      "featured": true,
-      "summary": "Complete ground-up implementation of the Transformer neural architecture in PyTorch including multi-head self-attention, positional encoding, custom dataset loaders, autoregressive generation, and unit tests.",
+      "category": "Deep Learning Core",
+      "context": "Open-Source Project · GitHub",
+      "short_description": "Clean, ground-up PyTorch implementation of the Transformer neural network including multi-head self-attention, positional encoding, custom dataset streaming, autoregressive generation, and unit tests.",
+      "problem": "Relying solely on high-level library wrappers obscures how attention masks, tensor projections, layer normalization, and autoregressive decoding behave under the hood.",
+      "solution": "Implemented the complete Transformer architecture from first principles in PyTorch (`model.py`, `train.py`, `generate.py`, `dataset.py`, `config.py`) along with an automated test suite (`test_transformer.py`).",
       "architecture": [
-        "Custom Multi-Head Self-Attention, LayerNorm, Feed-Forward Networks & Positional Encodings (model.py)",
-        "Configurable hyperparameter system (config.py) & streaming dataset pipeline (dataset.py)",
-        "End-to-end training loop (train.py) and autoregressive text generation engine (generate.py)",
-        "Automated tensor shape and attention verification test suite (test_transformer.py)"
+        "Core Attention & Blocks (`model.py`): Scaled dot-product attention, multi-head projections, sinusoidal/learned positional encodings, residual connections, and feed-forward blocks.",
+        "Data & Config Pipeline (`dataset.py`, `config.py`): Tokenization, sliding context windows, and centralized hyperparameter management.",
+        "Training & Generation (`train.py`, `generate.py`): Cross-entropy optimization loop, learning-rate scheduling, and temperature/top-k autoregressive sampling.",
+        "Verification Suite (`test_transformer.py`): Unit tests validating causal masking, attention output shapes, and gradient flow."
       ],
+      "diagram_nodes": [
+        "Token Stream",
+        "Positional Encoding",
+        "Multi-Head Self-Attention",
+        "Feed-Forward + LayerNorm",
+        "Autoregressive Decoder"
+      ],
+      "contribution": "Wrote every module and unit test from scratch in PyTorch without relying on pre-built `nn.Transformer` wrappers.",
+      "results": "Provides a clean, tested reference codebase for custom attention mechanisms and sequence modeling experiments.",
       "tech": [
         "PyTorch",
         "Python",
-        "Transformers",
-        "Self-Attention",
-        "Deep Learning",
+        "Multi-Head Attention",
+        "Autoregressive Decoding",
         "Unit Testing"
       ],
-      "github": "https://github.com/ehtishamsher/transformers",
-      "metrics": "From-Scratch PyTorch • Full Test Suite"
-    },
+      "github": "https://github.com/ehtishamsher/transformers"
+    }
+  ],
+  "other_projects": [
     {
-      "id": "spatial-memory-cv",
-      "title": "Spatial Memory — Vision LLM & Temporal Tracking Assistant",
-      "category": "Computer Vision",
-      "badge": "Edge AI & Vision • Irvinei",
-      "featured": true,
-      "summary": "Camera-based spatial reasoning system combining YOLOv8 object detection, multi-object tracking, and a SQLite temporal index so a Vision LLM can answer natural-language questions about physical events.",
-      "architecture": [
-        "Real-time YOLOv8 detection paired with persistent multi-object tracking IDs",
-        "Temporal SQLite event indexing recording object trajectories, timestamps, and spatial zones",
-        "Vision LLM query bridge translating conversational questions into temporal SQL + visual verification"
-      ],
+      "title": "Spatial Memory — Vision LLM & Temporal Event Assistant",
+      "category": "Computer Vision · Irvinei",
+      "summary": "Camera assistant combining YOLOv8 object detection, multi-object tracking, and a SQLite temporal index so a Vision LLM can answer natural-language questions about what happened and where.",
       "tech": [
         "YOLOv8",
-        "Vision LLM",
-        "OpenCV",
-        "SQLite",
         "Multi-Object Tracking",
-        "Python"
+        "Vision LLM",
+        "SQLite",
+        "OpenCV"
       ],
-      "github": "https://github.com/ehtishamsher",
-      "metrics": "Real-Time Spatial Indexing • Natural Language Video QA"
+      "github": "https://github.com/ehtishamsher"
     },
     {
-      "id": "student-performance-aws",
-      "title": "End-to-End Predictive Analytics Pipeline on AWS Elastic Beanstalk",
-      "category": "MLOps & Data Engineering",
-      "badge": "Cloud Deployment • GitHub",
-      "featured": false,
-      "summary": "Modular machine learning regression and ensemble pipeline (CatBoost, XGBoost, Scikit-learn) with automated feature engineering and cloud deployment on AWS Elastic Beanstalk.",
-      "architecture": [
-        "Automated Data Ingestion, Train/Test Split & ColumnTransformer Feature Pipelines",
-        "Model Benchmarking across CatBoost, XGBoost, Random Forest, and Gradient Boosting",
-        "Production web application (application.py) deployed via AWS .ebextensions"
-      ],
+      "title": "Student Performance Predictive Pipeline on AWS Elastic Beanstalk",
+      "category": "Machine Learning · AWS",
+      "summary": "End-to-end regression and ensemble pipeline (CatBoost, XGBoost, Scikit-learn) packaged with automated feature transformers and deployed on AWS Elastic Beanstalk.",
       "tech": [
         "Python",
         "CatBoost",
         "XGBoost",
-        "Scikit-learn",
-        "AWS Elastic Beanstalk",
-        "Flask"
+        "Flask",
+        "AWS Elastic Beanstalk"
       ],
-      "github": "https://github.com/ehtishamsher/mlproject",
-      "metrics": "AWS Cloud Deployed • Ensemble Benchmarking"
+      "github": "https://github.com/ehtishamsher/mlproject"
     },
     {
-      "id": "yolo-world-zero-shot",
-      "title": "YOLO-World & YOLOE-26 Open-Vocabulary Detection Suite",
-      "category": "Computer Vision",
-      "badge": "Zero-Shot Vision • GitHub",
-      "featured": false,
-      "summary": "Implementation of open-vocabulary zero-shot object detection using YOLO-World and YOLOE-26, enabling real-time detection of arbitrary custom classes via text prompts without retraining.",
-      "architecture": [
-        "Vision-Language Reparameterizable Path Aggregation Network (RepVL-PAN)",
-        "Zero-shot custom vocabulary prompt injection for instant edge inference"
-      ],
+      "title": "YOLO-World & YOLOE-26 Zero-Shot Object Detection",
+      "category": "Computer Vision · GitHub",
+      "summary": "Open-vocabulary object detection implementations allowing real-time detection of custom text-prompted classes without model retraining.",
       "tech": [
         "Python",
         "YOLO-World",
         "YOLOE-26",
         "PyTorch",
-        "OpenCV",
-        "Computer Vision"
+        "OpenCV"
       ],
-      "github": "https://github.com/ehtishamsher/yolo_world_model",
-      "metrics": "Zero-Shot Prompt Detection • Real-Time CV"
+      "github": "https://github.com/ehtishamsher/yolo_world_model"
     },
     {
-      "id": "live-alerts-automation",
-      "title": "Live Alerts — Autonomous Event Routing & Cloud Media Pipeline",
-      "category": "Computer Vision",
-      "badge": "Autonomous Pipeline",
-      "featured": false,
-      "summary": "24/7 autonomous edge-to-cloud pipeline where motion-gated detection triggers secondary classification models, automated webhook/notification routing, and AWS S3 media archival.",
-      "architecture": [
-        "Low-latency motion gating to filter idle frames and minimize GPU compute",
-        "Cascaded classification & event routing with automated S3 clip storage"
-      ],
+      "title": "Live Alerts — Motion-Gated Event Routing Pipeline",
+      "category": "Automation · Cloud",
+      "summary": "Continuous edge-to-cloud pipeline where motion-gated frame filtering triggers secondary classifiers, webhook notifications, and AWS S3 media archival.",
       "tech": [
         "Python",
         "OpenCV",
         "AWS S3",
         "Webhooks",
-        "Event-Driven Automation"
+        "Automation"
       ],
-      "github": "https://github.com/ehtishamsher",
-      "metrics": "24/7 Autonomous Operation • Motion-Gated Compute"
+      "github": "https://github.com/ehtishamsher"
+    }
+  ],
+  "skill_categories": [
+    {
+      "category": "AI & Machine Learning",
+      "description": "Deep learning, computer vision, and classical predictive modeling",
+      "skills": [
+        "Python",
+        "PyTorch",
+        "TensorFlow",
+        "Scikit-learn",
+        "YOLOv8 / YOLO11",
+        "YOLO-World",
+        "Transformers",
+        "XGBoost",
+        "CatBoost",
+        "OpenCV",
+        "NumPy",
+        "Pandas"
+      ]
     },
     {
-      "id": "gemini-clone-react",
-      "title": "Gemini AI Web Interface (React + Vite)",
-      "category": "Full-Stack & Web",
-      "badge": "Frontend UI • GitHub",
-      "featured": false,
-      "summary": "Responsive conversational AI web interface built with React.js and Vite featuring modern component state management, prompt history, and sleek animations.",
-      "architecture": [
-        "Modular React component hierarchy with Vite fast HMR build system",
-        "Responsive sidebar, prompt cards, and streaming-style response rendering"
-      ],
-      "tech": [
+      "category": "AI Engineering & LLMs",
+      "description": "Multi-agent orchestration, retrieval systems, and hardware deployment",
+      "skills": [
+        "LangGraph",
+        "LangChain",
+        "OpenAI API",
+        "Anthropic Claude",
+        "Hybrid RAG",
+        "Qdrant Vector DB",
+        "Prompt Engineering",
+        "ONNX",
+        "TensorRT",
+        "CoreML",
+        "TFLite",
+        "OpenAI Whisper",
+        "Salesforce BLIP",
+        "Tesseract OCR"
+      ]
+    },
+    {
+      "category": "Backend & Full-Stack",
+      "description": "APIs, web applications, and real-time service architecture",
+      "skills": [
+        "FastAPI",
+        "Flask",
+        "Node.js",
         "React.js",
-        "JavaScript (ES6+)",
-        "Vite",
-        "CSS3",
-        "Responsive Design"
+        "Next.js",
+        "RESTful APIs",
+        "WebSockets",
+        "JWT Authentication",
+        "Streamlit",
+        "HTML5 & CSS3",
+        "JavaScript (ES6+)"
+      ]
+    },
+    {
+      "category": "Data, Databases & MLOps",
+      "description": "Storage engines, ETL pipelines, containerization, and cloud infrastructure",
+      "skills": [
+        "MongoDB",
+        "PostgreSQL / SQL",
+        "Redis",
+        "SQLite",
+        "ETL / Data Validation",
+        "Docker",
+        "GitHub Actions CI/CD",
+        "AWS (Elastic Beanstalk, S3)",
+        "Cloudflare R2",
+        "Git & GitHub",
+        "Linux"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "agentic-ml",
+      "title": "Agentic ML — Autonomous Computer Vision Training Platform",
+      "category": "AI Engineering & Agents",
+      "context": "Irvinei Flagship System · 2026",
+      "short_description": "Autonomous 15-stage multi-agent platform that discovers datasets, validates annotations, trains YOLOv8/11 models, recovers from GPU failures, and exports deployment weights from a single natural-language request.",
+      "problem": "Training custom computer vision models required hours of manual work: searching multiple platforms for datasets, fixing broken annotation files, guessing batch sizes that wouldn't crash GPU VRAM, and manually tuning hyperparameters when accuracy stalled.",
+      "solution": "Built a stateful 15-stage LangGraph multi-agent pipeline exposed via FastAPI that automates the entire lifecycle from prompt parsing and dataset curation to GPU pre-flight checks, self-healing training, and closed-loop retraining.",
+      "architecture": [
+        "Goal Parser & Planner Node: Extracts target classes, latency targets, and VRAM/time budgets from user prompts.",
+        "Dataset Discovery & Quality Gate: Queries Roboflow, Kaggle, Hugging Face, and GitHub; validates class distributions; auto-repairs corrupt images/labels; uploads clean splits to AWS S3 & Cloudflare R2.",
+        "Pre-Flight GPU Dry Run: Estimates peak VRAM usage and runs a 1-epoch dry run before queuing full training.",
+        "Self-Healing Training Worker: Streams live loss telemetry; automatically catches CUDA Out-Of-Memory errors, scales down batch size, and resumes from the last checkpoint.",
+        "Closed-Loop Evaluator & Exporter: Evaluates mAP, Precision, Recall, and F1 against thresholds and exports passing models to ONNX, TensorRT, CoreML, TFLite, and OpenVINO."
       ],
-      "github": "https://github.com/ehtishamsher/Gemini-Clone",
-      "metrics": "React + Vite SPA • Mobile-First UI"
+      "diagram_nodes": [
+        "User Prompt",
+        "LangGraph Planner",
+        "Dataset Gate (S3/R2)",
+        "Self-Healing YOLO Trainer",
+        "ONNX / TensorRT Export"
+      ],
+      "contribution": "Designed the 15-stage LangGraph state machine, wrote the native Python agent tools (dataset search, VRAM estimator, config generator, OOM recovery loop), and built the FastAPI control endpoints.",
+      "results": "Reduced end-to-end custom model creation from days of manual ML engineering to a single automated run with automatic recovery from GPU memory crashes.",
+      "tech": [
+        "Python",
+        "LangGraph",
+        "FastAPI",
+        "MongoDB",
+        "YOLOv8 / YOLO11",
+        "AWS S3",
+        "Cloudflare R2",
+        "ONNX / TensorRT"
+      ],
+      "github": "https://github.com/ehtishamsher"
+    },
+    {
+      "id": "hybrid-rag-platform",
+      "title": "Hybrid RAG Supervision & Diagnostic Engine",
+      "category": "LLMs & Retrieval Systems",
+      "context": "Irvinei Production System · 2026",
+      "short_description": "Dual-path Retrieval-Augmented Generation system combining Qdrant semantic vector search with exact JSON state snapshots from Redis and MongoDB, backed by anti-hallucination verification.",
+      "problem": "Standard vector-only RAG systems struggle with live operational telemetry—when engineers asked about a specific training run's loss spike or hyperparameter config, pure embedding search often retrieved stale or approximate chunks and hallucinated numbers.",
+      "solution": "Architected a hybrid retrieval pipeline that pairs dense semantic search in Qdrant with deterministic key-value snapshot lookup in Redis and MongoDB, followed by a verification step that checks numeric claims before returning the response.",
+      "architecture": [
+        "Query Router: Classifies incoming engineering questions into conceptual queries, live telemetry lookups, or hybrid diagnostics.",
+        "Parallel Retrieval Layer: Fetches top-k semantic embeddings from Qdrant while pulling exact JSON run snapshots from Redis cache and MongoDB.",
+        "Context Assembly & LLM Dispatch: Formats structured telemetry alongside documentation chunks for OpenAI and Anthropic Claude models.",
+        "Anti-Hallucination Verification Gate: Cross-checks generated metrics (loss, mAP, epoch counts) against the ground-truth JSON snapshot prior to streaming."
+      ],
+      "diagram_nodes": [
+        "Diagnostic Query",
+        "Parallel Router",
+        "Qdrant Vectors + Redis JSON",
+        "OpenAI / Claude LLM",
+        "Fact Verification Gate"
+      ],
+      "contribution": "Built the hybrid Qdrant + Redis/MongoDB retrieval layer, prompt augmentation templates, and the post-generation numeric verification filter.",
+      "results": "Eliminated fabricated metric reporting in diagnostic chat while keeping end-to-end retrieval latency under 180ms.",
+      "tech": [
+        "Python",
+        "Qdrant",
+        "Redis",
+        "MongoDB",
+        "OpenAI API",
+        "Anthropic Claude",
+        "LangGraph",
+        "FastAPI"
+      ],
+      "github": "https://github.com/ehtishamsher"
+    },
+    {
+      "id": "network-security-mlops",
+      "title": "Network Security Phishing Detection & MLOps ETL Pipeline",
+      "category": "MLOps & Data Engineering",
+      "context": "Open-Source Project · GitHub",
+      "short_description": "End-to-end cybersecurity classification and data engineering system featuring automated Python ETL into MongoDB, schema validation gates, modular training stages, Docker containerization, and GitHub Actions CI/CD.",
+      "problem": "Security datasets frequently suffer from schema drift and missing values, and models trained in isolated notebooks fail to deploy reproducibly into production APIs.",
+      "solution": "Engineered a modular Python package with an automated ETL loader (`push_data.py`), YAML schema validation gates, multi-model benchmarking, and a Dockerized FastAPI service deployed via GitHub Actions.",
+      "architecture": [
+        "ETL Extraction & Loading (`push_data.py`): Reads raw phishing and network datasets, normalizes records, and bulk-loads JSON documents into MongoDB.",
+        "Data Validation Gate (`data_schema`): Validates incoming feature columns, data types, and drift thresholds before training.",
+        "Model Training & Tracking: Benchmarks ensemble classifiers with automated artifact versioning.",
+        "CI/CD & Container Deployment: Packages the inference API inside a Docker image built and tested automatically via GitHub Actions workflows."
+      ],
+      "diagram_nodes": [
+        "Raw Network CSV",
+        "Python ETL (push_data.py)",
+        "MongoDB Store",
+        "Schema Validation Gate",
+        "Docker + GitHub Actions API"
+      ],
+      "contribution": "Built the entire repository architecture—including the MongoDB ETL scripts, schema validator, training pipeline, Dockerfile, and GitHub Actions CI/CD workflow.",
+      "results": "Delivered a reproducible, containerized ML microservice with automated data validation and zero-downtime CI/CD builds.",
+      "tech": [
+        "Python",
+        "MongoDB",
+        "Docker",
+        "GitHub Actions",
+        "Scikit-learn",
+        "FastAPI",
+        "ETL Pipelines"
+      ],
+      "github": "https://github.com/ehtishamsher/networksecurity"
+    },
+    {
+      "id": "sensebridge",
+      "title": "SenseBridge — Multimodal AI Accessibility Platform",
+      "category": "Multimodal AI & Web",
+      "context": "Final Year Project · SSUET",
+      "short_description": "Unified accessibility web application chaining speech-to-text (90+ languages), text-to-speech, image captioning + OCR, and text-to-image synthesis into a single modular Python platform.",
+      "problem": "Visually and hearing-impaired users often have to switch between separate, fragmented tools for transcription, screen reading, document OCR, and visual description.",
+      "solution": "Created a single web interface that chains four distinct AI modalities—OpenAI Whisper, Salesforce BLIP, Tesseract OCR, and gTTS—backed by a local SQLite history database.",
+      "architecture": [
+        "Audio Transcription Pipeline: Processes microphone or uploaded audio through OpenAI Whisper across 90+ languages.",
+        "Dual Visual Understanding Engine: Combines Salesforce BLIP scene captioning with Tesseract OCR to read both natural photos and document text.",
+        "Speech & Visual Synthesis: Converts text to natural audio via gTTS and generates illustrative visuals via Pollinations AI.",
+        "Local Persistence Layer: Stores per-modality session logs in SQLite (`database.py`) for offline auditability and privacy."
+      ],
+      "diagram_nodes": [
+        "Audio / Image Input",
+        "Whisper STT + BLIP / OCR",
+        "Modular Python Controller",
+        "gTTS / Image Output",
+        "SQLite Session Store"
+      ],
+      "contribution": "Architected the modular Python codebase (`app.py`, `database.py`, `modules/`), integrated all four AI models, and designed the SQLite persistence schema.",
+      "results": "Successfully defended as the Final Year BSCS Project at SSUET, supporting 90+ languages in a unified accessibility workflow.",
+      "tech": [
+        "Python",
+        "OpenAI Whisper",
+        "Salesforce BLIP",
+        "Tesseract OCR",
+        "gTTS",
+        "SQLite",
+        "Streamlit"
+      ],
+      "github": "https://github.com/ehtishamsher/sensebridge"
+    },
+    {
+      "id": "pytorch-transformer",
+      "title": "Transformer Architecture Built From Scratch in PyTorch",
+      "category": "Deep Learning Core",
+      "context": "Open-Source Project · GitHub",
+      "short_description": "Clean, ground-up PyTorch implementation of the Transformer neural network including multi-head self-attention, positional encoding, custom dataset streaming, autoregressive generation, and unit tests.",
+      "problem": "Relying solely on high-level library wrappers obscures how attention masks, tensor projections, layer normalization, and autoregressive decoding behave under the hood.",
+      "solution": "Implemented the complete Transformer architecture from first principles in PyTorch (`model.py`, `train.py`, `generate.py`, `dataset.py`, `config.py`) along with an automated test suite (`test_transformer.py`).",
+      "architecture": [
+        "Core Attention & Blocks (`model.py`): Scaled dot-product attention, multi-head projections, sinusoidal/learned positional encodings, residual connections, and feed-forward blocks.",
+        "Data & Config Pipeline (`dataset.py`, `config.py`): Tokenization, sliding context windows, and centralized hyperparameter management.",
+        "Training & Generation (`train.py`, `generate.py`): Cross-entropy optimization loop, learning-rate scheduling, and temperature/top-k autoregressive sampling.",
+        "Verification Suite (`test_transformer.py`): Unit tests validating causal masking, attention output shapes, and gradient flow."
+      ],
+      "diagram_nodes": [
+        "Token Stream",
+        "Positional Encoding",
+        "Multi-Head Self-Attention",
+        "Feed-Forward + LayerNorm",
+        "Autoregressive Decoder"
+      ],
+      "contribution": "Wrote every module and unit test from scratch in PyTorch without relying on pre-built `nn.Transformer` wrappers.",
+      "results": "Provides a clean, tested reference codebase for custom attention mechanisms and sequence modeling experiments.",
+      "tech": [
+        "PyTorch",
+        "Python",
+        "Multi-Head Attention",
+        "Autoregressive Decoding",
+        "Unit Testing"
+      ],
+      "github": "https://github.com/ehtishamsher/transformers"
     }
   ]
 }

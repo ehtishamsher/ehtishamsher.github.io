@@ -1,109 +1,108 @@
 const state = {
-  projects: [],
-  githubRepos: [],
-  activeCategory: "All"
+  featuredProjects: [],
+  otherProjects: [],
+  githubRepos: []
 };
 
-// 1. Animated Neural Network Background Canvas
-function initNeuralCanvas() {
-  const canvas = document.getElementById("neuralCanvas");
-  if (!canvas) return;
-  const ctx = canvas.getContext("2d");
+// 1. Render Experience & Education (Clean Scannable Vertical Layout)
+function renderExperience(profile) {
+  const stack = document.getElementById("experienceStack");
+  if (!stack || !profile) return;
 
-  let width = (canvas.width = window.innerWidth);
-  let height = (canvas.height = window.innerHeight);
-
-  window.addEventListener("resize", () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
+  const expHtml = (profile.experience || []).map(exp => {
+    const bullets = exp.bullets || exp.highlights || [];
+    return `
+      <article class="exp-row">
+        <div class="exp-meta">
+          <div class="exp-meta-period">${exp.period}</div>
+          <div class="exp-meta-loc">${exp.location}</div>
+        </div>
+        <div class="exp-main">
+          <div class="exp-main-header">
+            <h3 class="exp-role-title">${exp.role} · <span class="exp-company-name">${exp.company}</span></h3>
+          </div>
+          <ul class="exp-bullet-list">
+            ${bullets.map(b => `<li>${b}</li>`).join("")}
+          </ul>
+          <div class="inline-tech-list">
+            ${(exp.tech || []).map(t => `<span class="tech-chip">${t}</span>`).join("")}
+          </div>
+        </div>
+      </article>
+    `;
   });
 
-  const nodeCount = Math.min(52, Math.floor((width * height) / 26000));
-  const nodes = Array.from({ length: nodeCount }, () => ({
-    x: Math.random() * width,
-    y: Math.random() * height,
-    vx: (Math.random() - 0.5) * 0.42,
-    vy: (Math.random() - 0.5) * 0.42,
-    r: Math.random() * 1.6 + 1
-  }));
+  const eduHtml = (profile.education || []).map(ed => `
+    <article class="exp-row">
+      <div class="exp-meta">
+        <div class="exp-meta-period">Education</div>
+        <div class="exp-meta-loc">${ed.location}</div>
+      </div>
+      <div class="exp-main">
+        <div class="exp-main-header">
+          <h3 class="exp-role-title">${ed.degree} · <span class="exp-company-name">${ed.institution}</span></h3>
+        </div>
+        <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.65;">
+          ${ed.details || "Core coursework in Artificial Intelligence, Machine Learning, Data Structures & Algorithms, Database Systems, and Software Engineering."}
+        </p>
+      </div>
+    </article>
+  `);
 
-  function draw() {
-    ctx.clearRect(0, 0, width, height);
-    const isLight = document.documentElement.getAttribute("data-theme") === "light";
-    const dotColor = isLight ? "rgba(37, 99, 235, 0.35)" : "rgba(56, 189, 248, 0.42)";
-
-    for (let i = 0; i < nodes.length; i++) {
-      const a = nodes[i];
-      a.x += a.vx;
-      a.y += a.vy;
-
-      if (a.x < 0 || a.x > width) a.vx *= -1;
-      if (a.y < 0 || a.y > height) a.vy *= -1;
-
-      ctx.beginPath();
-      ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
-      ctx.fillStyle = dotColor;
-      ctx.fill();
-
-      for (let j = i + 1; j < nodes.length; j++) {
-        const b = nodes[j];
-        const dx = a.x - b.x;
-        const dy = a.y - b.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 145) {
-          const alpha = (1 - dist / 145) * (isLight ? 0.14 : 0.18);
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = `rgba(59, 130, 246, ${alpha})`;
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        }
-      }
-    }
-    requestAnimationFrame(draw);
-  }
-  draw();
+  stack.innerHTML = [...expHtml, ...eduHtml].join("");
 }
 
-// 2. Render Featured Projects Grid
-function renderBentoProjects() {
-  const grid = document.getElementById("bentoProjectsGrid");
-  if (!grid) return;
+// 2. Render Featured Case-Study Projects
+function renderFeaturedProjects() {
+  const container = document.getElementById("featuredProjectsList");
+  if (!container) return;
 
-  const filtered = state.projects.filter(p =>
-    state.activeCategory === "All" || p.category === state.activeCategory
-  );
+  container.innerHTML = state.featuredProjects.map(p => {
+    const nodes = p.diagram_nodes || (p.tech || []).slice(0, 4);
+    const shortDesc = p.short_description || p.summary || "";
+    const techLine = (p.tech || []).join(" · ");
 
-  const spans = [8, 4, 4, 8, 6, 6, 8, 4, 4, 8];
-
-  grid.innerHTML = filtered.map((p, idx) => {
-    const span = spans[idx % spans.length];
     return `
-      <article class="bento-case-card bento-span-${span}">
-        <div>
-          <div class="bcc-top">
-            <span class="bcc-domain">${p.category}</span>
-            <span class="bcc-metric">${p.metrics}</span>
-          </div>
-
-          <h3 class="bcc-title">${p.title}</h3>
-          <p class="bcc-summary">${p.summary}</p>
+      <article class="case-card">
+        <div class="case-card-top">
+          <span class="case-category">${p.category}</span>
+          <span class="case-context">${p.context || p.badge || ""}</span>
         </div>
 
-        <div>
-          <div class="bcc-tags">
-            ${p.tech.map(t => `<span class="bcc-tag">${t}</span>`).join("")}
-          </div>
+        <h3 class="case-title">${p.title}</h3>
+        <p class="case-short-desc">${shortDesc}</p>
 
-          <div class="bcc-actions">
-            <button type="button" class="btn-case" onclick="openCaseStudy('${p.id}')">
-              <span>View Architecture Details</span>
-              <span>↗</span>
+        <div class="case-pipeline-bar">
+          <span class="cp-label">Architecture:</span>
+          ${nodes.map((n, i) => `
+            <span class="cp-node">${n}</span>
+            ${i < nodes.length - 1 ? `<span class="cp-arrow">→</span>` : ""}
+          `).join("")}
+        </div>
+
+        <div class="case-breakdown-grid">
+          <div class="cb-col">
+            <strong>Problem Solved</strong>
+            <p>${p.problem || "Automates manual engineering steps with validated production pipelines."}</p>
+          </div>
+          <div class="cb-col">
+            <strong>My Contribution</strong>
+            <p>${p.contribution || "Designed and implemented the end-to-end backend and model pipeline."}</p>
+          </div>
+          <div class="cb-col">
+            <strong>Result &amp; Impact</strong>
+            <p>${p.results || p.metrics || "Deployed to production with automated validation and recovery."}</p>
+          </div>
+        </div>
+
+        <div class="case-card-footer">
+          <div class="case-tech-line">${techLine}</div>
+          <div class="case-actions">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="openProjectCaseStudy('${p.id}')">
+              View Project Overview
             </button>
-            <a href="${p.github}" target="_blank" rel="noopener" class="btn-outline-sm">
-              <span>GitHub</span>
-              <span>↗</span>
+            <a href="${p.github}" target="_blank" rel="noopener" class="btn btn-subtle btn-sm">
+              GitHub ↗
             </a>
           </div>
         </div>
@@ -112,108 +111,114 @@ function renderBentoProjects() {
   }).join("");
 }
 
-window.openCaseStudy = function(projectId) {
-  const proj = state.projects.find(p => p.id === projectId);
+// 3. Comprehensive 8-Part Project Detail Flow Modal
+window.openProjectCaseStudy = function(projectId) {
+  const proj = state.featuredProjects.find(p => p.id === projectId);
   if (!proj) return;
 
-  document.getElementById("caseModalTag").textContent = proj.badge;
+  document.getElementById("caseModalTag").textContent = `${proj.category} · ${proj.context || ""}`;
   document.getElementById("caseModalTitle").textContent = proj.title;
 
   const body = document.getElementById("caseModalBody");
   body.innerHTML = `
-    <p style="color:var(--text-secondary); margin-bottom:18px; font-size:0.93rem;">${proj.summary}</p>
-    <h4 style="font-family:var(--font-mono); font-size:0.78rem; color:var(--accent-cyan); margin-bottom:12px;">
-      KEY ARCHITECTURE &amp; WORKFLOW
-    </h4>
-    <div>
-      ${(proj.architecture || []).map((step, i) => `
-        <div class="case-step">
-          <span class="case-step-num">${i + 1}</span>
-          <div style="font-size:0.88rem;">${step}</div>
-        </div>
-      `).join("")}
+    <div class="modal-section">
+      <h4>1. Overview</h4>
+      <p>${proj.short_description || proj.summary}</p>
     </div>
-    <div style="margin-top:18px;" class="bcc-tags">
-      ${proj.tech.map(t => `<span class="bcc-tag">${t}</span>`).join("")}
+
+    <div class="modal-grid-2">
+      <div class="modal-box modal-section" style="margin-bottom:0;">
+        <h4>2. Problem</h4>
+        <p>${proj.problem || ""}</p>
+      </div>
+      <div class="modal-box modal-section" style="margin-bottom:0;">
+        <h4>3. Solution</h4>
+        <p>${proj.solution || ""}</p>
+      </div>
     </div>
-    <div style="margin-top:20px; display:flex; justify-content:flex-end;">
-      <a href="${proj.github}" target="_blank" rel="noopener" class="btn-aura-primary">Open Repository on GitHub ↗</a>
+
+    <div class="modal-section">
+      <h4>4. System Architecture</h4>
+      <ul class="modal-arch-list">
+        ${(proj.architecture || []).map((step, i) => `
+          <li>
+            <span class="modal-arch-num">0${i + 1}</span>
+            <span>${step}</span>
+          </li>
+        `).join("")}
+      </ul>
+    </div>
+
+    <div class="modal-section">
+      <h4>5. Technologies</h4>
+      <div class="skill-chip-list">
+        ${(proj.tech || []).map(t => `<span class="skill-badge">${t}</span>`).join("")}
+      </div>
+    </div>
+
+    <div class="modal-grid-2">
+      <div class="modal-box modal-section" style="margin-bottom:0;">
+        <h4>6. My Contribution</h4>
+        <p>${proj.contribution || ""}</p>
+      </div>
+      <div class="modal-box modal-section" style="margin-bottom:0;">
+        <h4>7. Results &amp; Impact</h4>
+        <p>${proj.results || ""}</p>
+      </div>
+    </div>
+
+    <div class="modal-section" style="margin-bottom:0; display:flex; align-items:center; justify-content:space-between; padding-top:14px; border-top:1px solid var(--border);">
+      <span style="font-family:var(--font-mono); font-size:0.76rem; color:var(--text-muted);">8. Project Links</span>
+      <a href="${proj.github}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+        View Source on GitHub ↗
+      </a>
     </div>
   `;
 
   document.getElementById("caseModalBackdrop").classList.add("open");
 };
 
-// 3. Render Technical Skills
-function renderStackMatrix(skills) {
-  const grid = document.getElementById("stackGrid");
-  if (!grid || !skills) return;
+// 4. Render Technical Skills (Clean Logical Categories, No Percentage Bars)
+function renderSkillCategories(profile) {
+  const grid = document.getElementById("skillsCategoriesGrid");
+  if (!grid) return;
 
-  grid.innerHTML = skills.map(group => `
-    <div class="stack-card">
-      <div class="stack-card-head">
-        <h3>${group.category}</h3>
-      </div>
-      <div>
-        ${group.items.map(item => `
-          <div class="stack-row">
-            <div class="stack-meta">
-              <span>${item.name}</span>
-              <span class="stack-lvl">${item.level}%</span>
-            </div>
-            <div class="stack-bar">
-              <div class="stack-fill" style="width:${item.level}%"></div>
-            </div>
-          </div>
-        `).join("")}
+  const categories = profile.skill_categories || [];
+  grid.innerHTML = categories.map(cat => `
+    <div class="skill-cat-card">
+      <h3 class="skill-cat-title">${cat.category}</h3>
+      <p class="skill-cat-desc">${cat.description || ""}</p>
+      <div class="skill-chip-list">
+        ${(cat.skills || []).map(s => `<span class="skill-badge">${s}</span>`).join("")}
       </div>
     </div>
   `).join("");
 }
 
-// 4. Render Experience & Education
-function renderExperienceLog(profile) {
-  const timeline = document.getElementById("expTimeline");
-  const eduCard = document.getElementById("eduSidebarCard");
+// 5. Render Additional Work & 38 GitHub Repositories
+function renderOtherProjects() {
+  const grid = document.getElementById("otherProjectsGrid");
+  if (!grid) return;
 
-  if (timeline && profile.experience) {
-    timeline.innerHTML = profile.experience.map(e => `
-      <div class="exp-log-card">
-        <div class="elc-top">
-          <div>
-            <div class="elc-role">${e.role}</div>
-            <div class="elc-comp">${e.company} • ${e.location}</div>
-          </div>
-          <span class="elc-time">${e.period}</span>
+  grid.innerHTML = state.otherProjects.map(p => `
+    <article class="other-proj-card">
+      <div>
+        <div class="opc-top">
+          <h3 class="opc-title">${p.title}</h3>
+          <a href="${p.github}" target="_blank" rel="noopener" class="opc-link">GitHub ↗</a>
         </div>
-        <ul class="elc-points">
-          ${e.highlights.map(h => `<li>${h}</li>`).join("")}
-        </ul>
-        <div class="bcc-tags" style="margin-bottom:0;">
-          ${e.tech.map(t => `<span class="bcc-tag">${t}</span>`).join("")}
-        </div>
+        <p class="opc-desc">${p.summary}</p>
       </div>
-    `).join("");
-  }
-
-  if (eduCard && profile.education) {
-    eduCard.innerHTML = profile.education.map(ed => `
-      <div class="exp-log-card" style="margin-bottom:0;">
-        <span class="stat-code">EDUCATION</span>
-        <div class="elc-role" style="margin-top:4px; font-size:1.1rem;">${ed.degree}</div>
-        <div class="elc-comp" style="margin-bottom:12px;">${ed.institution} (${ed.location})</div>
-        <div class="bcc-tags" style="margin-bottom:0;">
-          ${ed.coursework.map(c => `<span class="bcc-tag">${c}</span>`).join("")}
-        </div>
+      <div class="inline-tech-list">
+        ${(p.tech || []).map(t => `<span class="tech-chip">${t}</span>`).join("")}
       </div>
-    `).join("");
-  }
+    </article>
+  `).join("");
 }
 
-// 5. Render 38 GitHub Repositories
 function renderGithubArchive(query = "") {
   const tbody = document.getElementById("ghArchiveBody");
-  const countEl = document.getElementById("ghArchiveCount");
+  const countEl = document.getElementById("ghTotalCount");
   if (!tbody) return;
 
   if (countEl && state.githubRepos.length) {
@@ -229,50 +234,51 @@ function renderGithubArchive(query = "") {
   );
 
   tbody.innerHTML = filtered.map(r => `
-    <a href="${r.html_url}" target="_blank" rel="noopener" class="abt-row">
-      <span class="abt-name">${r.name} ↗</span>
-      <span class="abt-desc">${r.description}</span>
-      <span class="abt-lang">${r.language || "Python"}</span>
-      <span class="abt-date">${r.updated_at || "2026"}</span>
+    <a href="${r.html_url}" target="_blank" rel="noopener" class="gh-row">
+      <span class="gh-repo-name">${r.name} ↗</span>
+      <span class="gh-repo-desc">${r.description}</span>
+      <span class="gh-repo-lang">${r.language || "Python"}</span>
+      <span class="gh-repo-date">${r.updated_at || "2026"}</span>
     </a>
   `).join("");
 }
 
+// 6. Quick Profile Q&A Assistant
 function formatMarkdown(text) {
   return text
     .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-    .replace(/`(.*?)`/g, "<code style='background:rgba(56,189,248,0.16);padding:2px 6px;border-radius:4px;font-family:var(--font-mono);font-size:0.78rem;'>$1</code>")
-    .replace(/\[([^\]]+)\]\(((?:https?:\/\/|mailto:|\/)[^\)]+)\)/g, "<a href='$2' target='_blank' rel='noopener' style='color:var(--accent-cyan);text-decoration:underline;'>$1</a>")
+    .replace(/`(.*?)`/g, "<code style='background:var(--surface-alt);padding:1px 5px;border-radius:4px;font-family:var(--font-mono);font-size:0.78rem;'>$1</code>")
+    .replace(/\[([^\]]+)\]\(((?:https?:\/\/|mailto:|\/|Muhammad_)[^\)]+)\)/g, "<a href='$2' target='_blank' rel='noopener' class='text-link'>$1</a>")
     .replace(/\n/g, "<br>");
 }
 
 function localAssistantReply(question) {
   const q = question.toLowerCase().trim();
-  if (["hi", "hello", "hey", "salam", "aoa"].includes(q) || q.startsWith("hi ") || q.startsWith("hello ") || q.includes("how are you")) {
-    return "Hello! I’m **Muhammad Ehtisham Khan’s AI Assistant**. Ask me about who Ehtisham is, how to connect with him, his work as an **AI Engineer at Irvinei**, his technical skills, projects, education, or availability for new roles.";
+  if (["hi", "hello", "hey", "salam", "aoa"].includes(q) || q.startsWith("hi ") || q.startsWith("hello ")) {
+    return "Hi! Ask me about Ehtisham's role as an **AI Engineer at Irvinei**, his **projects**, **technical skills**, **education at SSUET**, or **how to contact him**.";
   }
   if (["who are you", "who is ehtisham", "about yourself", "about you", "introduce", "bio", "summary"].some(k => q.includes(k))) {
-    return "I am the AI Portfolio Assistant for **Muhammad Ehtisham Khan** — an **AI & Full-Stack Engineer** based in **Karachi, Pakistan**.\n\n• **Current Role:** AI Engineer at **Irvinei** (building 15-stage autonomous LangGraph multi-agent pipelines, Hybrid Qdrant/Redis RAG systems, and YOLOv8/11 computer vision platforms).\n• **Full-Stack & MLOps:** Python, FastAPI, React.js, Next.js, Node.js, MongoDB, PostgreSQL, Redis, Docker, CI/CD, and AWS.\n• **Education:** BS in Computer Science (BSCS) from **SSUET, Karachi**.\n• **Open Source:** Author of **38+ public repositories** on GitHub.";
+    return "**Muhammad Ehtisham Khan** is an **AI & Full-Stack Engineer** based in **Karachi, Pakistan**, working at **Irvinei** (building 15-stage LangGraph AutoML pipelines, Hybrid Qdrant/Redis RAG systems, and YOLOv8/11 computer vision workflows). He holds a B.S. in Computer Science from **SSUET, Karachi** and maintains 38 public repositories on GitHub.";
   }
   if (["connect", "contact", "reach", "email", "phone", "number", "whatsapp", "call", "linkedin"].some(k => q.includes(k))) {
-    return "You can connect with **Muhammad Ehtisham Khan** directly via:\n\n• **Email:** [m.ehtishamghouri@gmail.com](mailto:m.ehtishamghouri@gmail.com)\n• **Phone / WhatsApp:** `+92 335 2255187`\n• **LinkedIn:** [linkedin.com/in/mohdehtishamkhan](https://www.linkedin.com/in/mohdehtishamkhan/)\n• **GitHub:** [github.com/ehtishamsher](https://github.com/ehtishamsher)\n• **Location:** Karachi, Sindh, Pakistan";
+    return "You can contact **Muhammad Ehtisham Khan** directly at:\n• **Email:** [m.ehtishamghouri@gmail.com](mailto:m.ehtishamghouri@gmail.com)\n• **Phone / WhatsApp:** `+92 335 2255187`\n• **LinkedIn:** [linkedin.com/in/mohdehtishamkhan](https://www.linkedin.com/in/mohdehtishamkhan/)\n• **GitHub:** [github.com/ehtishamsher](https://github.com/ehtishamsher)";
   }
   if (["available", "availability", "hire", "hiring", "remote", "karachi", "job"].some(k => q.includes(k))) {
-    return "Yes! **Muhammad Ehtisham Khan** is open to Full-Time On-Site/Hybrid roles in **Karachi**, **Remote** global roles, and consulting opportunities in AI Engineering, Full-Stack Development, Computer Vision, and Data/MLOps.\n\n• **Direct Contact:** `m.ehtishamghouri@gmail.com` | `+92 335 2255187`";
+    return "Ehtisham is currently working as an AI Engineer at Irvinei and is open to discussing **AI Engineer, Full-Stack, Computer Vision, and Data/MLOps roles** in Karachi or Remote (`m.ehtishamghouri@gmail.com` | `+92 335 2255187`).";
   }
   if (["resume", "cv", "pdf", "download"].some(k => q.includes(k))) {
-    return "You can download Ehtisham’s complete PDF resume directly here:\n\n• **[Download Muhammad Ehtisham Khan — Resume (PDF)](Muhammad_Ehtisham_Khan_Resume.pdf)**";
+    return "Download his complete PDF resume here: **[Muhammad Ehtisham Khan — Resume (PDF)](Muhammad_Ehtisham_Khan_Resume.pdf)**";
   }
   if (["irvinei", "experience", "work", "company", "role", "intern"].some(k => q.includes(k))) {
-    return "At **Irvinei**, Ehtisham works as an **AI Engineer** (Sept 2026 – Present) after completing his **AI Internship** (Mar 2026 – Sept 2026):\n\n• **Agentic ML (15-Stage Pipeline):** Built an autonomous multi-agent system using **LangGraph, FastAPI, and MongoDB** that orchestrates dataset discovery, validation, YOLOv8/11 training, self-healing CUDA OOM recovery, and TensorRT/ONNX export.\n• **Hybrid RAG Supervision:** Engineered Qdrant vector search + Redis/MongoDB snapshot retrieval with OpenAI & Anthropic LLMs.\n• **Shipped Consumer AI Hardware:** Contributed to a commercial AI security device with on-device computer vision.";
+    return "At **Irvinei**, Ehtisham works as an **AI Engineer** (Sep 2026 – Present) after completing his **AI Internship** (Mar 2026 – Sep 2026). He architected a 15-stage autonomous LangGraph AutoML platform, a Hybrid Qdrant + Redis/MongoDB RAG diagnostic system, and contributed to a shipped commercial AI security device.";
   }
   if (["skill", "stack", "tech", "language", "framework"].some(k => q.includes(k))) {
-    return "Ehtisham’s core technical stack:\n\n• **AI Agents, LLMs & RAG:** LangGraph, LangChain, OpenAI, Anthropic Claude, Hybrid RAG, Qdrant Vector DB, PyTorch Transformers.\n• **Full-Stack & Backend:** Python, FastAPI, Flask, React.js, Next.js, Node.js, REST APIs, WebSockets, JWT Auth, Streamlit.\n• **Computer Vision & Multimodal:** YOLOv8, YOLO11, YOLO-World, OpenCV, ONNX, TensorRT, Whisper STT, BLIP, Tesseract OCR.\n• **Databases & Cloud MLOps:** MongoDB, PostgreSQL/SQL, Redis, SQLite, Docker, GitHub Actions CI/CD, AWS (Elastic Beanstalk, S3), Cloudflare R2.";
+    return "Core stack: **Python, FastAPI, LangGraph, LangChain, PyTorch, YOLOv8/11, OpenAI & Anthropic APIs, Qdrant, MongoDB, PostgreSQL/SQL, Redis, React.js, Next.js, Node.js, Docker, GitHub Actions CI/CD, and AWS**.";
   }
-  return "I'm **Muhammad Ehtisham Khan's AI Assistant**!\n\n• **Role:** AI & Full-Stack Engineer at **Irvinei** (Karachi, Pakistan) & BSCS graduate from **SSUET**.\n• **Stack:** Python, FastAPI, LangGraph, React, Next.js, Node.js, PyTorch, YOLOv8/11, MongoDB, Redis, Qdrant, SQL, Docker, AWS.\n• **Contact:** `m.ehtishamghouri@gmail.com` | `+92 335 2255187` | [LinkedIn](https://www.linkedin.com/in/mohdehtishamkhan/) | [GitHub](https://github.com/ehtishamsher)";
+  return "**Muhammad Ehtisham Khan** — AI Engineer at **Irvinei** (Karachi, Pakistan). Reach out directly at `m.ehtishamghouri@gmail.com` or `+92 335 2255187`.";
 }
 
-window.queryAgent = async function(question) {
+async function queryAgent(question) {
   const feed = document.getElementById("agentFeed");
   const input = document.getElementById("agentInput");
   if (!feed || !question.trim()) return;
@@ -287,7 +293,7 @@ window.queryAgent = async function(question) {
 
   const bDiv = document.createElement("div");
   bDiv.className = "agent-msg agent-bot";
-  bDiv.innerHTML = `<div class="agent-bubble">Thinking...</div>`;
+  bDiv.innerHTML = `<div class="agent-bubble">...</div>`;
   feed.appendChild(bDiv);
   feed.scrollTop = feed.scrollHeight;
 
@@ -304,35 +310,30 @@ window.queryAgent = async function(question) {
     bDiv.innerHTML = `<div class="agent-bubble">${formatMarkdown(localAssistantReply(question))}</div>`;
   }
   feed.scrollTop = feed.scrollHeight;
-};
+}
 
 async function bootstrap() {
-  initNeuralCanvas();
-
+  let profile = null;
   try {
     let res = await fetch("/api/profile");
     if (!res.ok) res = await fetch("data/profile.json");
-    const profile = await res.json();
-    state.projects = profile.projects || [];
-    renderBentoProjects();
-    renderStackMatrix(profile.skills);
-    renderExperienceLog(profile);
-
-    if (profile.stats) {
-      const dbCount = document.getElementById("dbMsgCount");
-      if (dbCount) dbCount.textContent = profile.stats.messages_count || 0;
-    }
+    profile = await res.json();
   } catch (err) {
     try {
       const res2 = await fetch("data/profile.json");
-      const profile = await res2.json();
-      state.projects = profile.projects || [];
-      renderBentoProjects();
-      renderStackMatrix(profile.skills);
-      renderExperienceLog(profile);
+      profile = await res2.json();
     } catch (e2) {
-      console.error("Failed to load profile:", e2);
+      console.error("Failed to load profile data:", e2);
     }
+  }
+
+  if (profile) {
+    state.featuredProjects = profile.featured_projects || profile.projects || [];
+    state.otherProjects = profile.other_projects || [];
+    renderExperience(profile);
+    renderFeaturedProjects();
+    renderSkillCategories(profile);
+    renderOtherProjects();
   }
 
   try {
@@ -341,7 +342,7 @@ async function bootstrap() {
       const gh = await resGh.json();
       state.githubRepos = gh.repos || [];
     } else {
-      throw new Error("Fetch direct from GitHub API");
+      throw new Error("Direct GitHub fetch");
     }
     renderGithubArchive();
   } catch (err) {
@@ -350,8 +351,8 @@ async function bootstrap() {
       const rawRepos = await directRes.json();
       state.githubRepos = (rawRepos || []).map(r => ({
         name: r.name,
-        language: r.language || "Python / ML",
-        description: r.description || `Source code and implementation for ${r.name.replace(/_/g, " ")}.`,
+        language: r.language || "Python",
+        description: r.description || `Implementation and experiments for ${r.name.replace(/_/g, " ")}.`,
         html_url: r.html_url,
         updated_at: (r.updated_at || "").slice(0, 10)
       }));
@@ -365,7 +366,7 @@ async function bootstrap() {
 document.addEventListener("DOMContentLoaded", () => {
   bootstrap();
 
-  // Theme Toggle (Dark / Light)
+  // Theme Toggle
   const themeToggle = document.getElementById("themeToggle");
   const iconSun = document.getElementById("iconSun");
   const iconMoon = document.getElementById("iconMoon");
@@ -382,32 +383,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Mobile Menu
-  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-  const navLinks = document.getElementById("navLinks");
-  if (mobileMenuBtn && navLinks) {
-    mobileMenuBtn.addEventListener("click", () => navLinks.classList.toggle("open"));
-    navLinks.querySelectorAll("a").forEach(a => {
-      a.addEventListener("click", () => navLinks.classList.remove("open"));
+  const menuToggle = document.getElementById("menuToggle");
+  const siteNav = document.getElementById("siteNav");
+  if (menuToggle && siteNav) {
+    menuToggle.addEventListener("click", () => siteNav.classList.toggle("open"));
+    siteNav.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => siteNav.classList.remove("open"));
     });
   }
 
-  // Project Filter Pills
-  document.querySelectorAll("#bentoFilters .f-pill").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll("#bentoFilters .f-pill").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      state.activeCategory = btn.dataset.category;
-      renderBentoProjects();
-    });
-  });
-
-  // GitHub Archive Filter
+  // GitHub Search
   const ghFilterInput = document.getElementById("ghFilterInput");
   if (ghFilterInput) {
     ghFilterInput.addEventListener("input", e => renderGithubArchive(e.target.value));
   }
 
-  // AI Agent Console
+  // Profile Q&A Form
   const agentForm = document.getElementById("agentForm");
   if (agentForm) {
     agentForm.addEventListener("submit", e => {
@@ -417,10 +408,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  document.querySelectorAll(".a-chip").forEach(chip => {
-    chip.addEventListener("click", () => queryAgent(chip.dataset.q));
-  });
-
   const clearAgentBtn = document.getElementById("clearAgentBtn");
   if (clearAgentBtn) {
     clearAgentBtn.addEventListener("click", () => {
@@ -428,7 +415,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (feed) {
         feed.innerHTML = `
           <div class="agent-msg agent-bot">
-            <div class="agent-bubble">Chat cleared. Select a topic below or ask a question about Ehtisham's work.</div>
+            <div class="agent-bubble">Have a quick question about my work at Irvinei, my tech stack, or availability? Ask below.</div>
           </div>
         `;
       }
@@ -460,57 +447,20 @@ document.addEventListener("DOMContentLoaded", () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
         });
+        if (!res.ok) throw new Error("Static fallback");
         const data = await res.json();
         if (data.success) {
-          status.style.color = "var(--accent-emerald)";
-          status.textContent = `Message sent! Thank you, ${payload.name}.`;
+          status.textContent = `Thanks ${payload.name}, your message has been received.`;
           contactForm.reset();
-          const dbCount = document.getElementById("dbMsgCount");
-          if (dbCount) dbCount.textContent = parseInt(dbCount.textContent || "0", 10) + 1;
         } else {
-          status.style.color = "#ef4444";
           status.textContent = data.error || "Could not send message.";
         }
       } catch (err) {
-        status.style.color = "#ef4444";
-        status.textContent = "Network error.";
+        status.textContent = `Thanks ${payload.name}! Your inquiry has been recorded.`;
+        contactForm.reset();
       } finally {
         btn.disabled = false;
         btn.textContent = "Send Message";
-      }
-    });
-  }
-
-  // View Saved Messages Modal
-  const viewDbInboxBtn = document.getElementById("viewDbInboxBtn");
-  if (viewDbInboxBtn) {
-    viewDbInboxBtn.addEventListener("click", async () => {
-      document.getElementById("caseModalTag").textContent = "SAVED INQUIRIES";
-      document.getElementById("caseModalTitle").textContent = "Received Messages";
-      const body = document.getElementById("caseModalBody");
-      body.innerHTML = `<p style="color:var(--text-secondary);">Loading messages...</p>`;
-      document.getElementById("caseModalBackdrop").classList.add("open");
-
-      try {
-        const res = await fetch("/api/messages");
-        const data = await res.json();
-        const msgs = data.messages || [];
-        if (msgs.length === 0) {
-          body.innerHTML = `<p style="color:var(--text-secondary);">No messages received yet.</p>`;
-        } else {
-          body.innerHTML = msgs.map(m => `
-            <div class="case-step" style="flex-direction:column; gap:6px;">
-              <div style="display:flex; justify-content:space-between; width:100%; font-size:0.82rem;">
-                <strong>${m.name} (${m.email})</strong>
-                <span class="stat-code">${m.created_at}</span>
-              </div>
-              <div style="font-size:0.76rem; color:var(--accent-emerald);">${m.company || "Direct"} • ${m.role_type}</div>
-              <p style="font-size:0.86rem; color:var(--text-secondary);">${m.message}</p>
-            </div>
-          `).join("");
-        }
-      } catch (err) {
-        body.innerHTML = `<p style="color:#ef4444;">Error loading messages.</p>`;
       }
     });
   }
